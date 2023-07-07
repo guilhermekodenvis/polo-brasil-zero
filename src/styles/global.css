@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+	@apply m-0 p-0 box-border outline-0 text-base font-normal font-sans text-black;
+}
+
+body {
+	@apply bg-white overflow-x-hidden;
+}
+
+/* TAGS */
+
+h1 {
+	@apply text-3xl font-bold;
+}
+
+h2 {
+	@apply text-3xl font-bold;
+}
+
+h3 {
+	@apply text-xl font-semibold;
+}
+
+h4 {
+	@apply text-lg font-semibold;
+}
+
+/* CLASSES */
+
+.glass-effect {
+	/* From https://css.glass */
+	background: rgba(31, 31, 31, 0.36);
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(12.5px);
+	-webkit-backdrop-filter: blur(12.5px);
+	border-bottom: 1px solid rgba(31, 31, 31, 0.44);
+}
+
+.active {
+	@apply flex animate-slide-in absolute top-0 left-0;
+}
+
+.inactive {
+	@apply animate-slide-out;
+}
+
+/* COMPONENTS */
+
+.card-video:hover .card-banner {
+	@apply scale-125;
+}
+
+.card-banner {
+	@apply transition-all duration-300 ease-in-out origin-center;
+}
+
+.wrapper-full {
+	@apply max-w-screen-xl mx-auto px-12;
+}
+
+.bg-gradient-green {
+	background: linear-gradient(
+		90deg,
+		rgba(11, 33, 4, 0.8) 50%,
+		rgba(0, 0, 0, 0) 100%
+	);
+}
+
+.nav-menu {
+	@apply flex content-center w-full justify-around;
+}
+
+.nav-menu li {
+	@apply text-green-100 font-bold text-lg flex content-center flex-wrap;
+}
+
+.bt {
+	@apply px-5 py-3 rounded-lg w-fit h-fit;
+}
+
+.bt-primary {
+	@apply bg-green-700 text-green-100 font-bold text-lg hover:bg-dark-green-700 transition-all;
+}
+
+.bt-outline-primary {
+	@apply border-green-700 border-2 text-green-700 font-bold text-lg hover:bg-green-700 hover:text-green-100 transition-all;
+}
+
+.footer-menu li {
+	@apply text-green-700 mt-3;
+}
+
+.footer-menu.is-green li {
+	@apply text-green-100;
+}
