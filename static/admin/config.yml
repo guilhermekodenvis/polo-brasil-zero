@@ -11,6 +11,7 @@ collections:
     folder: "content/posts"
     create: true
     slug: "{{slug}}"
+    path: "{{slug}}/index"
     fields:
       - { label: "Título", name: "title", widget: "string" }
       - { label: "Data de postagem", name: "date", widget: "datetime" }
