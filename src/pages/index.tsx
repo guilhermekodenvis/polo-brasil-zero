@@ -181,13 +181,13 @@ const IndexPage: React.FC<PageProps> = () => {
 			<section className="py-16 mt-[540px] shrink-0 grow">
 				<div className="flex wrapper-full max-lg:justify-center max-lg:flex-col max-lg:items-center">
 					<div className="flex flex-col justify-center max-lg:items-center">
-						<h2 className="lg:w-80 text-green-800 max-lg:text-center">
+						<h2 className="lg:w-80 xl:w-auto text-green-800 max-lg:text-center">
 							Planta de venda do parque industrial
 						</h2>
 						<h3 className="mt-7 max-lg:text-center">
 							Nossos Lotes Sustentáveis
 						</h3>
-						<p className="mt-2 max-lg:text-center">
+						<p className="mt-2 max-lg:text-center xl:pr-28 2xl:pr-60">
 							Todos os lotes já estão equipados com tubulações centrais de
 							abastecimento e tratamento de água, rede de coleta dos efluentes
 							Industriais e sanitários ligado na ETE de água, rede de coleta dos
@@ -204,7 +204,6 @@ const IndexPage: React.FC<PageProps> = () => {
 							className="rounded-3xl w-full"
 							alt="Vídeo ilustrativo renderizado do Polo Brasil Zero"
 							src="../images/pbz-render-video-banner.png"
-							// aspectRatio={458 / 336}
 							layout="fullWidth"
 						/>
 						<StaticImage
@@ -241,10 +240,10 @@ const IndexPage: React.FC<PageProps> = () => {
 					</button>
 				</div>
 			</section>
-			<section className="lg:bg-green-100 py-8">
+			<section className="lg:bg-green-100 py-8 wrapper-full">
 				<div className="flex max-lg:flex-col bg-white rounded-3xl lg:!p-7 justify-between items-center">
 					<div className="max-lg:w-full">
-						<div className="relative flex justify-center items-center max-lg:px-7">
+						<div className="relative flex justify-center items-center">
 							{activedPreSalesImage === 0 && (
 								<StaticImage
 									className="rounded-2xl max-lg:w-full lg:w-[658px] lg:h-[367px]"
@@ -297,7 +296,7 @@ const IndexPage: React.FC<PageProps> = () => {
 								</a>
 							</div>
 						</div>
-						<div className="flex justify-between pt-7 overflow-x-scroll invisible-scrollbar max-lg:px-7">
+						<div className="flex pt-7 overflow-x-scroll invisible-scrollbar lg:justify-between">
 							<a
 								href="#"
 								onClick={(e) => {
@@ -352,8 +351,8 @@ const IndexPage: React.FC<PageProps> = () => {
 						</div>
 					</div>
 					<div className="w-full">
-						<div className="flex flex-col items-center lg:w-[300px] m-auto max-lg:mt-12 wrapper-full">
-							<h2 className="text-green-700 text-center lg:w-[250px]">
+						<div className="flex flex-col items-center m-auto max-lg:mt-12 wrapper-full">
+							<h2 className="text-green-700 text-center">
 								Pré lançamento de vendas
 							</h2>
 							<h3 className="mt-2 text-green-700 font-semibold">
@@ -389,7 +388,7 @@ const IndexPage: React.FC<PageProps> = () => {
 				<div className="flex wrapper-full items-center max-lg:flex-col">
 					<div className="flex flex-col max-lg:text-center max-lg:items-center">
 						<h2>Centro Sustentável Industrial, Tecnológico e Social</h2>
-						<p className="mt-7">
+						<p className="mt-7 xl:pr-28 2xl:pr-60">
 							Nosso Modelo Sustentável de Negócio impulsiona a transformação
 							industrial com foco socioambiental, com inovação total em gestão
 							de resíduos líquidos, sólidos e gasosos, sendo o primeiro parque
@@ -585,7 +584,7 @@ const IndexPage: React.FC<PageProps> = () => {
 					<div className="flex items-center max-lg:flex-col">
 						<div className="flex flex-col max-lg:text-center">
 							<h2>Ambição Net-Zero 2025</h2>
-							<p className="mt-4">
+							<p className="mt-4 xl:pr-28 2xl:pr-60">
 								Nosso Modelo Sustentável de Negócio impulsiona a transformação
 								industrial com foco socioambiental, com inovação total em gestão
 								de resíduos líquidos, sólidos e gasosos, sendo o primeiro parque
@@ -633,7 +632,7 @@ const IndexPage: React.FC<PageProps> = () => {
 			<section className="bg-green-100 py-16">
 				<div>
 					<h2 className="wrapper-full">Agenda ESG</h2>
-					<div className="mt-9 flex justify-between posts-box overflow-x-scroll invisible-scrollbar max-lg:px-12">
+					<div className="mt-9 wrapper-full flex justify-between posts-box overflow-x-scroll invisible-scrollbar max-lg:px-8">
 						<div className="w-[250px] cursor-pointer">
 							<StaticImage
 								className="rounded-2xl"
@@ -694,8 +693,8 @@ const IndexPage: React.FC<PageProps> = () => {
 				</div>
 			</section>
 			<section className="bg-green-700 max-lg:pt-16 lg:py-16">
-				<div className="flex items-center max-lg:flex-col">
-					<div className="wrapper-full flex flex-col max-lg:flex">
+				<div className="flex items-center max-lg:flex-col wrapper-full">
+					<div className="flex flex-col max-lg:flex">
 						<h2 className="text-white max-lg:text-center">
 							E você? Quer fazer parte do nosso parque? Entre em contato
 						</h2>
@@ -728,7 +727,7 @@ const IndexPage: React.FC<PageProps> = () => {
 							<span className="text-white">+55 11 3030-5100</span>
 						</div>
 					</div>
-					<div className="flex flex-col shrink-0 max-lg:w-full lg:w-[600px] p-12 bg-white rounded-2xl lg:ml-20 max-lg:mt-10 max-lg:shadow-2xl">
+					<div className="flex flex-col shrink-0 max-lg:w-screen lg:w-[600px] p-12 bg-white rounded-2xl lg:ml-20 max-lg:mt-10 max-lg:shadow-2xl">
 						<Input name="name" placeholder="Seu nome" label="Nome:" />
 						<Input
 							name="email"
