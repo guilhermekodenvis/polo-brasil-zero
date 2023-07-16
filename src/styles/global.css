@@ -8,7 +8,7 @@
 }
 
 body {
-	@apply bg-white overflow-x-hidden w-screen pr-[14px];
+	@apply bg-white overflow-x-hidden w-screen md:pr-[14px];
 }
 
 /* TAGS */

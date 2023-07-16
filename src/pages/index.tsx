@@ -215,12 +215,12 @@ const IndexPage: React.FC<PageProps> = () => {
 				</div>
 				<div className="wrapper-full">
 					<StaticImage
-						className="mx-auto block w-fit mt-32 max-lg:hidden"
+						className="mx-auto block w-fit mt-32 max-lg:!hidden"
 						alt="Planta do parque industrial"
 						src="../images/ground.svg"
 					/>
 					<StaticImage
-						className="mx-auto block w-full mt-32 lg:hidden"
+						className="mx-auto block w-full mt-32 lg:!hidden"
 						alt="Planta do parque industrial"
 						src="../images/map-responsive.png"
 						layout="fullWidth"

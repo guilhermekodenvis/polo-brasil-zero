@@ -101,13 +101,13 @@ export const Footer: React.FC<FooterProps> = ({ isGreen }) => {
 							isGreen ? "is-green" : ""
 						} max-lg:flex max-lg:flex-wrap`}
 					>
-						<li className="">Esg - Blog</li>
-						<li className="max-lg:ml-6">Sobre Nós</li>
-						<li className="max-lg:ml-6">Sustentabilidade</li>
-						<li className="max-lg:ml-6">Terrenos</li>
-						<li className="max-lg:ml-6">Parceiros</li>
-						<li className="max-lg:ml-6">Contato</li>
-						<li className="font-bold max-lg:ml-6">Baixar mídia kit</li>
+						<li className="max-lg:mr-6">Esg - Blog</li>
+						<li className="max-lg:mr-6">Sobre Nós</li>
+						<li className="max-lg:mr-6">Sustentabilidade</li>
+						<li className="max-lg:mr-6">Terrenos</li>
+						<li className="max-lg:mr-6">Parceiros</li>
+						<li className="max-lg:mr-6">Contato</li>
+						<li className="font-bold">Baixar mídia kit</li>
 					</ul>
 				</div>
 			</div>
