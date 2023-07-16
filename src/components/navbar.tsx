@@ -37,7 +37,7 @@ export const Navbar: React.FC = () => {
 					<StaticImage
 						alt="Menu hamburger"
 						src="../images/menu-hamburger.svg"
-						className="lg:hidden cursor-pointer"
+						className="!lg:hidden cursor-pointer"
 					/>
 				</a>
 				{isMenuOpen && (
@@ -52,7 +52,7 @@ export const Navbar: React.FC = () => {
 							<StaticImage
 								alt="Fechar menu hamburger"
 								src="../images/close.svg"
-								className="lg:hidden cursor-pointer"
+								className="!lg:hidden cursor-pointer"
 							/>
 						</a>
 					</li>
