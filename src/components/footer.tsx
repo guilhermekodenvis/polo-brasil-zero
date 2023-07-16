@@ -8,17 +8,17 @@ type FooterProps = {
 export const Footer: React.FC<FooterProps> = ({ isGreen }) => {
 	return (
 		<footer className={isGreen ? "bg-green-700" : "bg-white"}>
-			<div className="wrapper-full flex py-8 justify-between">
-				<div className="w-[300px]">
+			<div className="wrapper-full flex py-8 justify-between max-lg:flex-col max-lg:items-center">
+				<div className="lg:w-[300px] flex items-center flex-col">
 					{isGreen ? (
 						<StaticImage
-							className="scale-125 object-left-top"
+							className="object-left-top"
 							src="../images/logo-white.svg"
 							alt="Logo da empresa Polo Brasil Zero."
 						/>
 					) : (
 						<StaticImage
-							className="scale-125 object-left-top"
+							className="object-left-top"
 							src="../images/logo-green.svg"
 							alt="Logo da empresa Polo Brasil Zero."
 						/>
@@ -39,15 +39,15 @@ export const Footer: React.FC<FooterProps> = ({ isGreen }) => {
 						Tel. +55 {"("}11{")"} 1234-5678
 					</span>
 				</div>
-				<div className="w-[300px]">
-					<p
+				<div className="lg:w-[300px] max-lg:flex max-lg:flex-col max-lg:items-center">
+					<h3
 						className={`mt-8 ${
 							isGreen ? "text-green-100" : "text-green-700"
 						} font-bold `}
 					>
 						Nos siga nas redes sociais
-					</p>
-					<div className="mt-3">
+					</h3>
+					<div className="mt-3 flex items-center justify-center">
 						{isGreen ? (
 							<>
 								<StaticImage
@@ -86,63 +86,28 @@ export const Footer: React.FC<FooterProps> = ({ isGreen }) => {
 							</>
 						)}
 					</div>
-					{/* <h3
-						className={`font-bold ${
-							isGreen ? "text-green-100" : "text-green-700"
-						}`}
-					>
-						Blog
-					</h3>
-
-					<div className="bg-green-400 pl-5 py-5 flex mt-5 shadow-blog-footer-post relative">
-						<div className="w-[200px]">
-							<p className={`${isGreen ? "text-green-800" : "text-green-700"}`}>
-								Lorem Ipsum has been the industry's standard
-							</p>
-							<span
-								className={`mt-3 block ${
-									isGreen ? "text-green-800" : "text-green-700"
-								}`}
-							>
-								Setembro 10 2024{" "}
-							</span>
-						</div>
-						<div className="bg-black h-full w-20 shrink-0 absolute right-0 top-0"></div>
-					</div>
-
-					<div className="bg-green-400 pl-5 py-5 flex mt-5 shadow-blog-footer-post relative">
-						<div className="w-[200px]">
-							<p className={`${isGreen ? "text-green-800" : "text-green-700"}`}>
-								Lorem Ipsum has been the industry's standard
-							</p>
-							<span
-								className={`mt-3 block ${
-									isGreen ? "text-green-800" : "text-green-700"
-								}`}
-							>
-								Setembro 10 2024{" "}
-							</span>
-						</div>
-						<div className="bg-black h-full w-20 shrink-0 absolute right-0 top-0"></div>
-					</div> */}
 				</div>
 
-				<div>
+				<div className="max-lg:flex max-lg:flex-col max-lg:mt-8">
 					<h3
 						className={`font-bold ${
 							isGreen ? "text-green-100" : "text-green-700"
-						}`}
+						} max-lg:text-center`}
 					>
 						Menu
 					</h3>
-					<ul className={`footer-menu ${isGreen ? "is-green" : ""}`}>
-						<li>Esg - Blog</li>
-						<li>Sobre Nós</li>
-						<li>Sustentabilidade</li>
-						<li>Terrenos</li>
-						<li>Parceiros</li>
-						<li>Contato</li>
-						<li className="font-bold">Baixar mídia kit</li>
+					<ul
+						className={`footer-menu ${
+							isGreen ? "is-green" : ""
+						} max-lg:flex max-lg:flex-wrap`}
+					>
+						<li className="">Esg - Blog</li>
+						<li className="max-lg:ml-6">Sobre Nós</li>
+						<li className="max-lg:ml-6">Sustentabilidade</li>
+						<li className="max-lg:ml-6">Terrenos</li>
+						<li className="max-lg:ml-6">Parceiros</li>
+						<li className="max-lg:ml-6">Contato</li>
+						<li className="font-bold max-lg:ml-6">Baixar mídia kit</li>
 					</ul>
 				</div>
 			</div>
@@ -151,9 +116,13 @@ export const Footer: React.FC<FooterProps> = ({ isGreen }) => {
 					isGreen ? "border-green-100" : "border-green-700"
 				}`}
 			/>
-			<div className="bg-red-600 h-14 flex justify-center items-center">
-				<p className="text-green-100 font-bold">
+			<div className="bg-red-600 max-lg:h-20 lg:h-14 flex justify-center items-center">
+				<p className="text-green-100 font-bold max-lg:hidden">
 					© 2023 Polobrasilzero by Blackelphant | Todos os direitos reservados
+				</p>
+				<p className="text-green-100 font-bold lg:hidden text-center">
+					© 2023 Polobrasilzero by Blackelphant <br /> Todos os direitos
+					reservados
 				</p>
 			</div>
 		</footer>

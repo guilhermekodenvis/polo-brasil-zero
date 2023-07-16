@@ -57,7 +57,7 @@ const IndexPage: React.FC<PageProps> = () => {
 			<Navbar />
 			{isVideoOpen && (
 				<div
-					className="fixed w-screen h-screen top-0 left-0 bg-gradient-to-b from-black to-gray-500/50 flex justify-center items-center z-50"
+					className="fixed w-screen h-screen top-0 left-0 bg-black/60 flex justify-center items-center z-[999]"
 					onClick={handleCloseVideoClick}
 				>
 					<div className="w-[1000px] bg-black h-[600px]">
@@ -176,14 +176,16 @@ const IndexPage: React.FC<PageProps> = () => {
 					</li>
 				</ul>
 			</header>
-			<section className="py-16 mt-[540px]">
-				<div className="flex wrapper-full">
-					<div className="flex flex-col justify-center">
-						<h2 className="w-80 text-green-800">
+			<section className="py-16 mt-[540px] shrink-0 grow">
+				<div className="flex wrapper-full max-lg:justify-center max-lg:flex-col max-lg:items-center">
+					<div className="flex flex-col justify-center max-lg:items-center">
+						<h2 className="lg:w-80 text-green-800 max-lg:text-center">
 							Planta de venda do parque industrial
 						</h2>
-						<h3 className="mt-7">Nossos Lotes Sustentáveis</h3>
-						<p className="mt-2">
+						<h3 className="mt-7 max-lg:text-center">
+							Nossos Lotes Sustentáveis
+						</h3>
+						<p className="mt-2 max-lg:text-center">
 							Todos os lotes já estão equipados com tubulações centrais de
 							abastecimento e tratamento de água, rede de coleta dos efluentes
 							Industriais e sanitários ligado na ETE de água, rede de coleta dos
@@ -192,13 +194,16 @@ const IndexPage: React.FC<PageProps> = () => {
 						</p>
 					</div>
 					<div
-						className="w-[450px] h-[340px] shrink-0 ml-20 relative flex justify-center items-center cursor-pointer"
+						className="lg:w-[450px] lg:h-[340px] shrink-0 ml-20 relative flex justify-center
+						items-center cursor-pointer max-lg:mt-5 max-lg:w-full max-lg:ml-0"
 						onClick={handleOpenVideo}
 					>
 						<StaticImage
-							className="rounded-3xl"
+							className="rounded-3xl w-full"
 							alt="Vídeo ilustrativo renderizado do Polo Brasil Zero"
 							src="../images/pbz-render-video-banner.png"
+							// aspectRatio={458 / 336}
+							layout="fullWidth"
 						/>
 						<StaticImage
 							alt="Ícone de play"
@@ -207,27 +212,43 @@ const IndexPage: React.FC<PageProps> = () => {
 						/>
 					</div>
 				</div>
-				<StaticImage
-					className="mx-auto block w-fit mt-32"
-					alt="Planta do parque industrial"
-					src="../images/ground.svg"
-				/>
-				<button
-					type="button"
-					className="bt bt-outline-primary mx-auto block mt-9"
-				>
-					Baixar prospecto de venda
-				</button>
+				<div className="wrapper-full">
+					<StaticImage
+						className="mx-auto block w-fit mt-32 max-lg:hidden"
+						alt="Planta do parque industrial"
+						src="../images/ground.svg"
+					/>
+					<StaticImage
+						className="mx-auto block w-full mt-32 lg:hidden"
+						alt="Planta do parque industrial"
+						src="../images/map-responsive.png"
+						layout="fullWidth"
+					/>
+					<button
+						type="button"
+						className="bt bt-outline-primary mx-auto mt-9 flex justify-center items-center max-lg:w-full"
+					>
+						<StaticImage
+							alt="Ícone de baixar"
+							src="../images/download.svg"
+							className="bt-icon"
+						/>{" "}
+						<span className="ml-3 text-green-700 font-bold text-lg">
+							Baixar prospecto de venda
+						</span>
+					</button>
+				</div>
 			</section>
-			<section className="bg-green-100 py-8">
-				<div className="flex wrapper-full bg-white rounded-3xl !p-7 justify-between items-center">
-					<div>
-						<div className="relative flex justify-center items-center">
+			<section className="lg:bg-green-100 py-8">
+				<div className="flex max-lg:flex-col bg-white rounded-3xl lg:!p-7 justify-between items-center">
+					<div className="max-lg:w-full">
+						<div className="relative flex justify-center items-center max-lg:px-7">
 							{activedPreSalesImage === 0 && (
 								<StaticImage
-									className="rounded-2xl w-[658px] h-[367px]"
+									className="rounded-2xl max-lg:w-full lg:w-[658px] lg:h-[367px]"
 									alt="Imagem aerea do projeto. Renderizada"
 									src="../images/pre-sales-one.png"
+									layout="fullWidth"
 								/>
 							)}
 							{activedPreSalesImage === 1 && (
@@ -244,7 +265,7 @@ const IndexPage: React.FC<PageProps> = () => {
 									src="../images/pre-sales-three.png"
 								/>
 							)}
-							<div className="absolute flex justify-between w-full px-7">
+							<div className="absolute flex justify-between w-full px-14 lg:px-7">
 								<a
 									href="#"
 									className="cursor-pointer"
@@ -274,7 +295,7 @@ const IndexPage: React.FC<PageProps> = () => {
 								</a>
 							</div>
 						</div>
-						<div className="flex justify-between pt-7">
+						<div className="flex justify-between pt-7 overflow-x-scroll invisible-scrollbar max-lg:px-7">
 							<a
 								href="#"
 								onClick={(e) => {
@@ -301,7 +322,7 @@ const IndexPage: React.FC<PageProps> = () => {
 							>
 								<StaticImage
 									onClick={() => handleClickPreSaleImage(1)}
-									className={`w-[203px] rounded-2xl ${
+									className={`max-lg:ml-5 w-[203px] rounded-2xl ${
 										activedPreSalesImage === 1 &&
 										"border-[6px] border-green-700 bg-green-700"
 									}`}
@@ -318,7 +339,7 @@ const IndexPage: React.FC<PageProps> = () => {
 							>
 								<StaticImage
 									onClick={() => handleClickPreSaleImage(2)}
-									className={`w-[203px] rounded-2xl ${
+									className={`max-lg:ml-5 w-[203px] rounded-2xl ${
 										activedPreSalesImage === 2 &&
 										"border-[6px] border-green-700 bg-green-700"
 									}`}
@@ -329,8 +350,8 @@ const IndexPage: React.FC<PageProps> = () => {
 						</div>
 					</div>
 					<div className="w-full">
-						<div className="flex flex-col items-center w-[300px] m-auto">
-							<h2 className="text-green-700 text-center w-[250px]">
+						<div className="flex flex-col items-center lg:w-[300px] m-auto max-lg:mt-12 wrapper-full">
+							<h2 className="text-green-700 text-center lg:w-[250px]">
 								Pré lançamento de vendas
 							</h2>
 							<h3 className="mt-2 text-green-700 font-semibold">
@@ -347,7 +368,15 @@ const IndexPage: React.FC<PageProps> = () => {
 							<span className="text-green-700 mt-1">
 								Entrega finalizada em 2024
 							</span>
-							<button type="button" className="bt bt-primary mt-10">
+							<button
+								type="button"
+								className="bt bt-primary mt-10 flex justify-center items-center max-lg:w-full"
+							>
+								<StaticImage
+									alt="Ícone de baixar"
+									src="../images/send.svg"
+									className="bt-icon mr-3"
+								/>{" "}
 								Entrar em contato
 							</button>
 						</div>
@@ -355,8 +384,8 @@ const IndexPage: React.FC<PageProps> = () => {
 				</div>
 			</section>
 			<section className="py-16">
-				<div className="flex wrapper-full items-center">
-					<div className="flex flex-col">
+				<div className="flex wrapper-full items-center max-lg:flex-col">
+					<div className="flex flex-col max-lg:text-center max-lg:items-center">
 						<h2>Centro Sustentável Industrial, Tecnológico e Social</h2>
 						<p className="mt-7">
 							Nosso Modelo Sustentável de Negócio impulsiona a transformação
@@ -371,13 +400,14 @@ const IndexPage: React.FC<PageProps> = () => {
 						</button>
 					</div>
 					<div
-						className="w-[450px] h-[340px] shrink-0 ml-20 relative flex justify-center items-center cursor-pointer"
+						className="w-full h-auto lg:w-[450px] lg:h-[340px] shrink-0 lg:ml-20 relative flex justify-center items-center cursor-pointer max-lg:mt-7"
 						onClick={handleOpenVideo}
 					>
 						<StaticImage
-							className="rounded-3xl"
+							className="rounded-3xl w-full"
 							alt="Vídeo ilustrativo renderizado do Polo Brasil Zero"
 							src="../images/pbz-render-video-banner.png"
+							layout="fullWidth"
 						/>
 						<StaticImage
 							alt="Ícone de play"
@@ -387,13 +417,13 @@ const IndexPage: React.FC<PageProps> = () => {
 					</div>
 				</div>
 
-				<div className="flex wrapper-full mt-24 items-center">
+				<div className="flex wrapper-full mt-24 items-center max-lg:flex-col-reverse">
 					<StaticImage
 						alt="Imagem que mostra o plano ESG. (ambiental, social, governança, econômico, tecnológico)"
 						src="../images/esg.png"
-						className="shrink-0"
+						className="shrink-0 max-lg:mt-12"
 					/>
-					<div className="ml-64">
+					<div className="lg:ml-64 max-lg:text-center">
 						<h2>Missão de liderança</h2>
 						<p className="mt-7">
 							Buscamos equilibrar os aspectos econômicos, sociais e ambientais
@@ -407,8 +437,8 @@ const IndexPage: React.FC<PageProps> = () => {
 					</div>
 				</div>
 
-				<div className="wrapper-full flex mt-20">
-					<div>
+				<div className="wrapper-full flex mt-20 max-lg:flex-col">
+					<div className="max-lg:text-center">
 						<h2>Sustentabilidade</h2>
 						<p className="mt-7">
 							Conheça como boa práticas e foco de sustentabilidade pode
@@ -418,20 +448,23 @@ const IndexPage: React.FC<PageProps> = () => {
 					<StaticImage
 						alt="Lista de todas as ODS's da ONU"
 						src="../images/odss.png"
-						className="shrink-0 ml-20"
+						className="shrink-0 lg:ml-20 max-lg:mt-12"
 						objectFit="contain"
+						layout="fullWidth"
 					/>
 				</div>
 			</section>
-			<section className="bg-green-700 w-full h-[362px]">
-				<div className="bg-green-800 h-full wrapper-full flex !px-0">
+			<section className="bg-green-700 w-full lg:h-[362px]">
+				<div className="bg-green-800 h-full wrapper-full flex !px-0 max-lg:flex-col">
 					<div className="flex relative justify-center cursor-pointer overflow-hidden card-video">
 						<div className="bg-green-400 w-full h-full z-50 absolute top-0 left-0 mix-blend-multiply"></div>
 						<div className="from-black bg-gradient-to-t w-full h-2/5 absolute z-50 bottom-0"></div>
 						<StaticImage
-							className="shrink-0 card-banner"
+							className="shrink-0 card-banner max-lg:w-full max-lg:h-80"
+							imgClassName="object-left-top"
 							alt="Banner do vídeo"
 							src="../images/video-one.png"
+							layout="fullWidth"
 						/>
 						<StaticImage
 							className="w-6 mx-auto top-32 absolute z-[60]"
@@ -451,7 +484,9 @@ const IndexPage: React.FC<PageProps> = () => {
 						<div className="bg-green-400 w-full h-full z-50 absolute top-0 left-0 mix-blend-multiply"></div>
 						<div className="from-black bg-gradient-to-t w-full h-2/5 absolute z-50 bottom-0"></div>
 						<StaticImage
-							className="shrink-0 card-banner"
+							className="shrink-0 card-banner max-lg:w-full max-lg:h-80"
+							imgClassName="object-left-top"
+							layout="fullWidth"
 							alt="Banner do vídeo"
 							src="../images/video-two.png"
 						/>
@@ -473,7 +508,9 @@ const IndexPage: React.FC<PageProps> = () => {
 						<div className="bg-green-400 w-full h-full z-50 absolute top-0 left-0 mix-blend-multiply"></div>
 						<div className="from-black bg-gradient-to-t w-full h-2/5 absolute z-50 bottom-0"></div>
 						<StaticImage
-							className="shrink-0 card-banner"
+							className="shrink-0 card-banner max-lg:w-full max-lg:h-80"
+							imgClassName="object-left-top"
+							layout="fullWidth"
 							alt="Banner do vídeo"
 							src="../images/video-one.png"
 						/>
@@ -495,7 +532,9 @@ const IndexPage: React.FC<PageProps> = () => {
 						<div className="bg-green-400 w-full h-full z-50 absolute top-0 left-0 mix-blend-multiply"></div>
 						<div className="from-black bg-gradient-to-t w-full h-2/5 absolute z-50 bottom-0"></div>
 						<StaticImage
-							className="shrink-0 card-banner"
+							className="shrink-0 card-banner max-lg:w-full max-lg:h-80"
+							imgClassName="object-left-top"
+							layout="fullWidth"
 							alt="Banner do vídeo"
 							src="../images/video-two.png"
 						/>
@@ -517,7 +556,9 @@ const IndexPage: React.FC<PageProps> = () => {
 						<div className="bg-green-400 w-full h-full z-50 absolute top-0 left-0 mix-blend-multiply"></div>
 						<div className="from-black bg-gradient-to-t w-full h-2/5 absolute z-50 bottom-0"></div>
 						<StaticImage
-							className="shrink-0 card-banner"
+							className="shrink-0 card-banner max-lg:w-full max-lg:h-80"
+							imgClassName="object-left-top"
+							layout="fullWidth"
 							alt="Banner do vídeo"
 							src="../images/video-one.png"
 						/>
@@ -539,8 +580,8 @@ const IndexPage: React.FC<PageProps> = () => {
 			</section>
 			<section className="py-20">
 				<div className="wrapper-full flex flex-col items-center">
-					<div className="flex items-center">
-						<div className="flex flex-col">
+					<div className="flex items-center max-lg:flex-col">
+						<div className="flex flex-col max-lg:text-center">
 							<h2>Ambição Net-Zero 2025</h2>
 							<p className="mt-4">
 								Nosso Modelo Sustentável de Negócio impulsiona a transformação
@@ -551,40 +592,64 @@ const IndexPage: React.FC<PageProps> = () => {
 								longo prazo para as empresas, sociedade e o meio ambiente.
 							</p>
 						</div>
-						<div className="bg-black w-[360px] h-[360px] shrink-0 ml-52"></div>
+						<div className="bg-black w-[360px] h-[360px] shrink-0 lg:ml-52 max-lg:mt-16"></div>
 					</div>
 					<h2 className="mt-20">Parceiros estratégicos</h2>
-					<div className="flex mt-16 justify-between w-full">
+					<div className="flex mt-16 justify-between w-full max-lg:flex-col items-center">
 						<StaticImage
 							alt="Imagem de um parceiro estratégico"
-							src="../images/partner-mock.png"
+							src="../images/partner-one.png"
+							layout="fixed"
 						/>
 						<StaticImage
+							className="max-lg:mt-10"
 							alt="Imagem de um parceiro estratégico"
-							src="../images/partner-mock.png"
+							src="../images/partner-two.png"
+							layout="fixed"
 						/>
 						<StaticImage
+							className="max-lg:mt-10"
 							alt="Imagem de um parceiro estratégico"
-							src="../images/partner-mock.png"
+							src="../images/partner-three.png"
+							layout="fixed"
 						/>
 						<StaticImage
+							className="max-lg:mt-10"
 							alt="Imagem de um parceiro estratégico"
-							src="../images/partner-mock.png"
+							src="../images/partner-four.png"
+							layout="fixed"
 						/>
 						<StaticImage
+							className="max-lg:mt-10"
 							alt="Imagem de um parceiro estratégico"
-							src="../images/partner-mock.png"
+							src="../images/partner-five.png"
+							layout="fixed"
 						/>
 					</div>
 				</div>
 			</section>
 			<section className="bg-green-100 py-16">
-				<div className="wrapper-full">
-					<h2>Agenda ESG</h2>
-					<div className="mt-9 flex justify-between">
+				<div>
+					<h2 className="wrapper-full">Agenda ESG</h2>
+					<div className="mt-9 flex justify-between posts-box overflow-x-scroll invisible-scrollbar max-lg:px-12">
 						<div className="w-[250px] cursor-pointer">
 							<StaticImage
-								className="w-[250px] h-[330px] rounded-2xl"
+								className="rounded-2xl"
+								alt="Clique aqui para saber mais a respeito das centrais de abastecimento e tratamento de água."
+								src="../images/placeholder-hand.png"
+								layout="fullWidth"
+							/>
+							<h4 className="mt-6">
+								Centrais de abastecimento e tratamento de água
+							</h4>
+							<span className="mt-6 font-semibold block">
+								12 julho 23 - Terrenos
+							</span>
+						</div>
+						<div className="w-[250px] cursor-pointer">
+							<StaticImage
+								layout="fullWidth"
+								className="rounded-2xl"
 								alt="Clique aqui para saber mais a respeito das centrais de abastecimento e tratamento de água."
 								src="../images/placeholder-hand.png"
 							/>
@@ -597,7 +662,8 @@ const IndexPage: React.FC<PageProps> = () => {
 						</div>
 						<div className="w-[250px] cursor-pointer">
 							<StaticImage
-								className="w-[250px] h-[330px] rounded-2xl"
+								layout="fullWidth"
+								className="rounded-2xl"
 								alt="Clique aqui para saber mais a respeito das centrais de abastecimento e tratamento de água."
 								src="../images/placeholder-hand.png"
 							/>
@@ -610,20 +676,8 @@ const IndexPage: React.FC<PageProps> = () => {
 						</div>
 						<div className="w-[250px] cursor-pointer">
 							<StaticImage
-								className="w-[250px] h-[330px] rounded-2xl"
-								alt="Clique aqui para saber mais a respeito das centrais de abastecimento e tratamento de água."
-								src="../images/placeholder-hand.png"
-							/>
-							<h4 className="mt-6">
-								Centrais de abastecimento e tratamento de água
-							</h4>
-							<span className="mt-6 font-semibold block">
-								12 julho 23 - Terrenos
-							</span>
-						</div>
-						<div className="w-[250px] cursor-pointer">
-							<StaticImage
-								className="w-[250px] h-[330px] rounded-2xl"
+								layout="fullWidth"
+								className="rounded-2xl"
 								alt="Clique aqui para saber mais a respeito das centrais de abastecimento e tratamento de água."
 								src="../images/placeholder-hand.png"
 							/>
@@ -637,13 +691,13 @@ const IndexPage: React.FC<PageProps> = () => {
 					</div>
 				</div>
 			</section>
-			<section className="bg-green-700 py-16">
-				<div className="wrapper-full flex items-center">
-					<div className="flex flex-col">
-						<h2 className="text-white">
+			<section className="bg-green-700 max-lg:pt-16 lg:py-16">
+				<div className="flex items-center max-lg:flex-col">
+					<div className="wrapper-full flex flex-col max-lg:flex">
+						<h2 className="text-white max-lg:text-center">
 							E você? Quer fazer parte do nosso parque? Entre em contato
 						</h2>
-						<div className="mt-16 p-3 border-white rounded-md border w-[330px]">
+						<div className="mt-16 p-3 border-white rounded-md border lg:w-[330px]">
 							<StaticImage
 								alt="Ícone de email"
 								src="../images/mail.svg"
@@ -651,11 +705,11 @@ const IndexPage: React.FC<PageProps> = () => {
 							/>
 							<span className="text-white">contato@polobrasilzero.com.br</span>
 						</div>
-						<div className="mt-4 p-3 border-white rounded-md border w-[330px] flex items-center">
+						<div className="mt-4 p-3 border-white rounded-md border lg:w-[330px] flex items-center">
 							<StaticImage
 								alt="Ícone de endereço"
 								src="../images/map.svg"
-								className="mr-2 shrink-0 h-[21px]"
+								className="mr-4 shrink-0 h-[21px]"
 							/>
 							<span className="text-white block">
 								Av. das Nações Unidas, 14.171 Vila Gertrudes, São Paulo - SP.
@@ -663,7 +717,7 @@ const IndexPage: React.FC<PageProps> = () => {
 							</span>
 						</div>
 
-						<div className="mt-4 p-3 border-white rounded-md border w-[330px]">
+						<div className="mt-4 p-3 border-white rounded-md border lg:w-[330px]">
 							<StaticImage
 								alt="Ícone de telefone"
 								src="../images/phone.svg"
@@ -672,7 +726,7 @@ const IndexPage: React.FC<PageProps> = () => {
 							<span className="text-white">+55 11 3030-5100</span>
 						</div>
 					</div>
-					<div className="flex flex-col shrink-0 w-[600px] p-12 bg-white rounded-2xl ml-20">
+					<div className="flex flex-col shrink-0 max-lg:w-full lg:w-[600px] p-12 bg-white rounded-2xl lg:ml-20 max-lg:mt-10 max-lg:shadow-2xl">
 						<Input name="name" placeholder="Seu nome" label="Nome:" />
 						<Input
 							name="email"
