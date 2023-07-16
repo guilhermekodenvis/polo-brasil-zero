@@ -49,31 +49,31 @@ module.exports = {
 			keyframes: {
 				"slide-in": {
 					from: {
-						left: "400px",
+						transform: "translateX(400px)",
 						opacity: "0",
 					},
 					to: {
-						left: "0",
+						transform: "translateX(0px)",
 						opacity: "1",
 					},
 				},
 				"slide-out": {
 					from: {
-						left: "0",
+						transform: "translateX(0px)",
 						opacity: "1",
 						"z-index": "0",
 					},
 					to: {
-						left: "-400px",
+						transform: "translateX(-400px)",
 						opacity: "0",
 						"z-index": "-9999",
 					},
 				},
 			},
-			animation: {
-				"slide-in": "slide-in 1s ease-in-out forwards",
-				"slide-out": "slide-out 1s ease-in-out forwards",
-			},
+			// animation: {
+			// 	"slide-in": "slide-in 1s ease-in-out forwards",
+			// 	"slide-out": "slide-out 1s ease-in-out forwards",
+			// },
 		},
 	},
 	plugins: [],

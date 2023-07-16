@@ -79,10 +79,10 @@ const IndexPage: React.FC<PageProps> = () => {
 					>
 						<div className="bg-gradient-green h-[540px] w-screen">
 							<div className="wrapper-full">
-								<h1 className="text-green-100 pt-40 w-[400px]">
+								<h1 className="text-green-100 pt-40 lg:w-[400px]">
 									Primeiro Parque industrial ZERO EMISSÕES do Brasil
 								</h1>
-								<p className="text-green-100 mt-2 w-[580px]">
+								<p className="text-green-100 mt-2 lg:w-[580px]">
 									Com reciclagem total das emissões líquidas e sólidas geradas,
 									seguindo padrões de economia circular e de baixo carbo.
 								</p>
@@ -99,10 +99,10 @@ const IndexPage: React.FC<PageProps> = () => {
 					>
 						<div className="bg-gradient-green h-[540px] w-screen">
 							<div className="wrapper-full">
-								<h1 className="text-green-100 pt-40 w-[400px]">
+								<h1 className="text-green-100 pt-40 lg:w-[400px]">
 									Centro Sustentável Polo Brazil Zero
 								</h1>
-								<p className="text-green-100 mt-2 w-[580px]">
+								<p className="text-green-100 mt-2 lg:w-[580px]">
 									Uma iniciativa privada, onde a inovação se encontra com a
 									responsabilidade socioambiental, alinhado com os objetivos de
 									desenvolvimento sustentável da ONU.
@@ -120,10 +120,10 @@ const IndexPage: React.FC<PageProps> = () => {
 					>
 						<div className="bg-gradient-green h-[540px] w-screen">
 							<div className="wrapper-full">
-								<h1 className="text-green-100 pt-40 w-[400px]">
+								<h1 className="text-green-100 pt-40 lg:w-[400px]">
 									Uma empresa que se importa com o meio ambiente
 								</h1>
-								<p className="text-green-100 mt-2 w-[580px]">
+								<p className="text-green-100 mt-2 lg:w-[580px]">
 									Aqui construímos um futuro sem emissões diretas. Junte-se a
 									nós, nessa transformação verde rumo a DESCARBONIZAÇÃO da
 									indústria Brasileira com SUSTENTABILIDADE.
@@ -141,10 +141,10 @@ const IndexPage: React.FC<PageProps> = () => {
 					>
 						<div className="bg-gradient-green h-[540px] w-screen">
 							<div className="wrapper-full">
-								<h1 className="text-green-100 pt-40 w-[400px]">
+								<h1 className="text-green-100 pt-40 lg:w-[400px]">
 									No coração do nosso complexo
 								</h1>
-								<p className="text-green-100 mt-2 w-[580px]">
+								<p className="text-green-100 mt-2 lg:w-[580px]">
 									Bombeando todo DESENVOLVIMENTO SUSTENTÁVEL, um EcoHub de
 									Tecnologia voltado para a Agricultura regenerativa BC,
 									Indústria 5.0 e Sociabilidade.
@@ -162,8 +162,10 @@ const IndexPage: React.FC<PageProps> = () => {
 					>
 						<div className="bg-gradient-green h-[540px] w-screen">
 							<div className="wrapper-full">
-								<h1 className="text-green-100 pt-40 w-[400px]">Nossa missão</h1>
-								<p className="text-green-100 mt-2 w-[580px]">
+								<h1 className="text-green-100 pt-40 lg:w-[400px]">
+									Nossa missão
+								</h1>
+								<p className="text-green-100 mt-2 lg:w-[580px]">
 									Vai além como compromisso socioambiental, com projetos
 									voltados para a TRANSFORMAÇÃO das PESSOAS e COMUNIDADE, com
 									urbanismo social de verdade.

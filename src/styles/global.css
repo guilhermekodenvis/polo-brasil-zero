@@ -8,7 +8,7 @@
 }
 
 body {
-	@apply bg-white overflow-x-hidden;
+	@apply bg-white overflow-x-hidden w-screen;
 }
 
 /* TAGS */
@@ -41,12 +41,12 @@ h4 {
 }
 
 .active {
-	@apply flex animate-slide-in absolute top-0 left-0;
+	@apply flex absolute top-0 left-0;
 }
 
-.inactive {
+/* .inactive {
 	@apply animate-slide-out;
-}
+} */
 
 .invisible-scrollbar::-webkit-scrollbar {
 	width: 0.4em;
