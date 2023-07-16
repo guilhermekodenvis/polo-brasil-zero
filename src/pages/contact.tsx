@@ -28,8 +28,8 @@ const ContactPage: React.FC<PageProps> = () => {
 				></iframe>
 			</section>
 			<section className="py-16">
-				<div className="wrapper-full flex px-10 justify-between">
-					<div>
+				<div className="wrapper-full flex px-10 justify-between max-lg:flex-col">
+					<div className="max-lg:flex max-lg:flex-col max-lg:items-center">
 						<h2>Entre em contato</h2>
 						<p className="w-[300px] mt-5">
 							Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -57,7 +57,7 @@ const ContactPage: React.FC<PageProps> = () => {
 							/>
 						</div>
 					</div>
-					<div className="w-3/5 flex shrink-0 flex-col ml-12">
+					<div className="lg:w-3/5 flex shrink-0 flex-col lg:ml-12 max-lg:mt-8">
 						<Input name="name" placeholder="Nome completo" />
 						<Input name="phone" placeholder="Telefone" inputClasses="mt-8" />
 						<Input
@@ -74,7 +74,7 @@ const ContactPage: React.FC<PageProps> = () => {
 						<Button
 							text="Enviar mensagem"
 							variant="primary"
-							buttonClasses="mt-8"
+							buttonClasses="mt-8 !w-full"
 						/>
 					</div>
 				</div>
