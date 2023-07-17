@@ -456,12 +456,12 @@ const IndexPage: React.FC<PageProps> = () => {
 				</div>
 			</section>
 			<section className="bg-green-700 w-full lg:h-[362px]">
-				<div className="bg-green-800 h-full wrapper-full flex !px-0 max-lg:flex-col">
-					<div className="flex relative justify-center cursor-pointer overflow-hidden card-video">
+				<div className="bg-green-800 h-full wrapper-full flex !px-0 max-lg:flex-col lg:justify-center">
+					<div className="flex relative justify-center cursor-pointer overflow-hidden card-video lg:w-1/5">
 						<div className="bg-green-400 w-full h-full z-50 absolute top-0 left-0 mix-blend-multiply"></div>
 						<div className="from-black bg-gradient-to-t w-full h-2/5 absolute z-50 bottom-0"></div>
 						<StaticImage
-							className="shrink-0 card-banner max-lg:w-full max-lg:h-80"
+							className="shrink-0 card-banner w-full max-lg:h-80"
 							imgClassName="object-left-top"
 							alt="Banner do vídeo"
 							src="../images/video-one.png"
@@ -481,11 +481,11 @@ const IndexPage: React.FC<PageProps> = () => {
 							</p>
 						</div>
 					</div>
-					<div className="flex relative justify-center cursor-pointer overflow-hidden card-video">
+					<div className="flex relative justify-center cursor-pointer overflow-hidden card-video lg:w-1/5">
 						<div className="bg-green-400 w-full h-full z-50 absolute top-0 left-0 mix-blend-multiply"></div>
 						<div className="from-black bg-gradient-to-t w-full h-2/5 absolute z-50 bottom-0"></div>
 						<StaticImage
-							className="shrink-0 card-banner max-lg:w-full max-lg:h-80"
+							className="shrink-0 card-banner w-full max-lg:h-80"
 							imgClassName="object-left-top"
 							layout="fullWidth"
 							alt="Banner do vídeo"
@@ -505,11 +505,11 @@ const IndexPage: React.FC<PageProps> = () => {
 							</p>
 						</div>
 					</div>
-					<div className="flex relative justify-center cursor-pointer overflow-hidden card-video">
+					<div className="flex relative justify-center cursor-pointer overflow-hidden card-video lg:w-1/5">
 						<div className="bg-green-400 w-full h-full z-50 absolute top-0 left-0 mix-blend-multiply"></div>
 						<div className="from-black bg-gradient-to-t w-full h-2/5 absolute z-50 bottom-0"></div>
 						<StaticImage
-							className="shrink-0 card-banner max-lg:w-full max-lg:h-80"
+							className="shrink-0 card-banner w-full max-lg:h-80"
 							imgClassName="object-left-top"
 							layout="fullWidth"
 							alt="Banner do vídeo"
@@ -529,11 +529,11 @@ const IndexPage: React.FC<PageProps> = () => {
 							</p>
 						</div>
 					</div>
-					<div className="flex relative justify-center cursor-pointer overflow-hidden card-video">
+					<div className="flex relative justify-center cursor-pointer overflow-hidden card-video lg:w-1/5">
 						<div className="bg-green-400 w-full h-full z-50 absolute top-0 left-0 mix-blend-multiply"></div>
 						<div className="from-black bg-gradient-to-t w-full h-2/5 absolute z-50 bottom-0"></div>
 						<StaticImage
-							className="shrink-0 card-banner max-lg:w-full max-lg:h-80"
+							className="shrink-0 card-banner w-full max-lg:h-80"
 							imgClassName="object-left-top"
 							layout="fullWidth"
 							alt="Banner do vídeo"
@@ -553,11 +553,11 @@ const IndexPage: React.FC<PageProps> = () => {
 							</p>
 						</div>
 					</div>
-					<div className="flex relative justify-center cursor-pointer overflow-hidden card-video">
+					<div className="flex relative justify-center cursor-pointer overflow-hidden card-video lg:w-1/5">
 						<div className="bg-green-400 w-full h-full z-50 absolute top-0 left-0 mix-blend-multiply"></div>
 						<div className="from-black bg-gradient-to-t w-full h-2/5 absolute z-50 bottom-0"></div>
 						<StaticImage
-							className="shrink-0 card-banner max-lg:w-full max-lg:h-80"
+							className="shrink-0 card-banner w-full max-lg:h-80"
 							imgClassName="object-left-top"
 							layout="fullWidth"
 							alt="Banner do vídeo"

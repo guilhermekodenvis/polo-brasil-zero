@@ -51,17 +51,19 @@ export const Footer: React.FC<FooterProps> = ({ isGreen }) => {
 						{isGreen ? (
 							<>
 								<StaticImage
-									className="w-16 h-16"
+									// className="w-16 h-16"
 									src="../images/facebook-white.svg"
 									alt="Nossa página no facebook."
 								/>
 								<StaticImage
-									className="w-16 h-16 ml-4"
+									className="ml-4"
+									// className="w-16 h-16 ml-4"
 									src="../images/linkedin-white.svg"
 									alt="Nossa página no linkedIn."
 								/>
 								<StaticImage
-									className="w-16 h-16 ml-4"
+									className="ml-4"
+									// className="w-16 h-16 ml-4"
 									src="../images/instagram-white.svg"
 									alt="Nosso perfil no instagram."
 								/>
@@ -69,17 +71,19 @@ export const Footer: React.FC<FooterProps> = ({ isGreen }) => {
 						) : (
 							<>
 								<StaticImage
-									className="w-16 h-16"
+									// className="w-16 h-16"
 									src="../images/facebook.svg"
 									alt="Nossa página no facebook."
 								/>
 								<StaticImage
-									className="w-16 h-16 ml-4"
+									className="ml-4"
+									// className="w-16 h-16 ml-4"
 									src="../images/linkedin.svg"
 									alt="Nossa página no linkedIn."
 								/>
 								<StaticImage
-									className="w-16 h-16 ml-4"
+									className="ml-4"
+									// className="w-16 h-16 ml-4"
 									src="../images/instagram.svg"
 									alt="Nosso perfil no instagram."
 								/>
