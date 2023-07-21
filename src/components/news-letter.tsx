@@ -28,7 +28,7 @@ export const NewsLetter: React.FC = () => {
 						className="bt bt-primary shrink-0 lg:ml-3 max-lg:mt-3 max-lg:w-full flex justify-center items-center"
 					>
 						<StaticImage
-							alt="Ícone de baixar"
+							alt="Ícone de enviar mensagem"
 							src="../images/send.svg"
 							className="bt-icon mr-3"
 						/>

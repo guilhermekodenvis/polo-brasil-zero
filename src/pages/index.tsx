@@ -427,8 +427,10 @@ const IndexPage: React.FC<PageProps> = () => {
 			<section className="py-16">
 				<div className="flex wrapper-full items-center max-lg:flex-col">
 					<div className="flex flex-col max-lg:text-center max-lg:items-center">
-						<h2>Centro Sustentável Industrial, Tecnológico e Social</h2>
-						<p className="mt-7 xl:pr-28 2xl:pr-60">
+						<h2 className="text-green-800">
+							Centro Sustentável Industrial, Tecnológico e Social
+						</h2>
+						<p className="mt-7 xl:pr-28 2xl:pr-60 text-green-800">
 							Nosso Modelo Sustentável de Negócio impulsiona a transformação
 							industrial com foco socioambiental, com inovação total em gestão
 							de resíduos líquidos, sólidos e gasosos, sendo o primeiro parque
@@ -465,8 +467,8 @@ const IndexPage: React.FC<PageProps> = () => {
 						className="shrink-0 max-lg:mt-12"
 					/>
 					<div className="lg:ml-64 max-lg:text-center">
-						<h2>Missão de liderança</h2>
-						<p className="mt-7">
+						<h2 className="text-green-800">Missão de liderança</h2>
+						<p className="mt-7 text-green-800">
 							Buscamos equilibrar os aspectos econômicos, sociais e ambientais
 							visando criar valor a longo prazo para as empresas, sociedade e o
 							meio ambiente. criar valor a longo prazo para as empresas,
@@ -480,8 +482,8 @@ const IndexPage: React.FC<PageProps> = () => {
 
 				<div className="wrapper-full flex mt-20 max-lg:flex-col">
 					<div className="max-lg:text-center">
-						<h2>Sustentabilidade</h2>
-						<p className="mt-7">
+						<h2 className="text-green-800"> Sustentabilidade</h2>
+						<p className="mt-7 text-green-800">
 							Conheça como boa práticas e foco de sustentabilidade pode
 							transformar o futuro da indústria, das pessoas e do planeta
 						</p>
@@ -616,8 +618,8 @@ const IndexPage: React.FC<PageProps> = () => {
 				<div className="wrapper-full flex flex-col items-center">
 					<div className="flex items-center max-lg:flex-col">
 						<div className="flex flex-col max-lg:text-center">
-							<h2>Ambição Net-Zero 2025</h2>
-							<p className="mt-4 xl:pr-28 2xl:pr-60">
+							<h2 className="text-green-800">Ambição Net-Zero 2025</h2>
+							<p className="mt-4 xl:pr-28 2xl:pr-60 text-green-800">
 								Nosso Modelo Sustentável de Negócio impulsiona a transformação
 								industrial com foco socioambiental, com inovação total em gestão
 								de resíduos líquidos, sólidos e gasosos, sendo o primeiro parque
@@ -628,7 +630,7 @@ const IndexPage: React.FC<PageProps> = () => {
 						</div>
 						<div className="bg-black w-[360px] h-[360px] shrink-0 lg:ml-52 max-lg:mt-16"></div>
 					</div>
-					<h2 className="mt-20">Parceiros estratégicos</h2>
+					<h2 className="mt-20 text-green-800">Parceiros estratégicos</h2>
 					<div className="flex mt-16 justify-between w-full max-lg:flex-col items-center">
 						<StaticImage
 							alt="Imagem de um parceiro estratégico"
@@ -664,7 +666,7 @@ const IndexPage: React.FC<PageProps> = () => {
 			</section>
 			<section className="bg-green-100 py-16">
 				<div>
-					<h2 className="wrapper-full">Agenda ESG</h2>
+					<h2 className="wrapper-full text-green-800">Agenda ESG</h2>
 					<div className="mt-9 wrapper-full flex justify-between posts-box overflow-x-scroll invisible-scrollbar max-lg:px-8">
 						<div className="w-[250px] cursor-pointer">
 							<StaticImage
@@ -673,10 +675,10 @@ const IndexPage: React.FC<PageProps> = () => {
 								src="../images/placeholder-hand.png"
 								layout="fullWidth"
 							/>
-							<h4 className="mt-6">
+							<h4 className="mt-6 text-green-800">
 								Centrais de abastecimento e tratamento de água
 							</h4>
-							<span className="mt-6 font-semibold block">
+							<span className="mt-6 font-semibold block text-green-800">
 								12 julho 23 - Terrenos
 							</span>
 						</div>
@@ -687,10 +689,10 @@ const IndexPage: React.FC<PageProps> = () => {
 								alt="Clique aqui para saber mais a respeito das centrais de abastecimento e tratamento de água."
 								src="../images/placeholder-hand.png"
 							/>
-							<h4 className="mt-6">
+							<h4 className="mt-6 text-green-800">
 								Centrais de abastecimento e tratamento de água
 							</h4>
-							<span className="mt-6 font-semibold block">
+							<span className="mt-6 font-semibold block text-green-800">
 								12 julho 23 - Terrenos
 							</span>
 						</div>
@@ -701,10 +703,10 @@ const IndexPage: React.FC<PageProps> = () => {
 								alt="Clique aqui para saber mais a respeito das centrais de abastecimento e tratamento de água."
 								src="../images/placeholder-hand.png"
 							/>
-							<h4 className="mt-6">
+							<h4 className="mt-6 text-green-800">
 								Centrais de abastecimento e tratamento de água
 							</h4>
-							<span className="mt-6 font-semibold block">
+							<span className="mt-6 font-semibold block text-green-800">
 								12 julho 23 - Terrenos
 							</span>
 						</div>
@@ -715,10 +717,10 @@ const IndexPage: React.FC<PageProps> = () => {
 								alt="Clique aqui para saber mais a respeito das centrais de abastecimento e tratamento de água."
 								src="../images/placeholder-hand.png"
 							/>
-							<h4 className="mt-6">
+							<h4 className="mt-6 text-green-800">
 								Centrais de abastecimento e tratamento de água
 							</h4>
-							<span className="mt-6 font-semibold block">
+							<span className="mt-6 font-semibold block text-green-800">
 								12 julho 23 - Terrenos
 							</span>
 						</div>
@@ -775,11 +777,24 @@ const IndexPage: React.FC<PageProps> = () => {
 							labelClasses="mt-6"
 						/>
 						{/* <Input /> */}
-						<span className="block mx-auto mt-6 font-medium">
-							<input type="checkbox" name="isTermsReaded" id="isTermsReaded" />{" "}
+						<span className="block mx-auto mt-6 font-medium text-green-800">
+							<input
+								type="checkbox"
+								name="isTermsReaded"
+								id="isTermsReaded"
+								className="text-green-800"
+							/>{" "}
 							Declaro que li os termos de uso.
 						</span>
-						<button type="button" className="bt bt-primary mx-auto mt-5">
+						<button
+							type="button"
+							className="bt bt-primary mx-auto mt-5 flex items-center justify-center"
+						>
+							<StaticImage
+								alt="Ícone de enviar mensagem"
+								src="../images/send.svg"
+								className="bt-icon mr-3"
+							/>
 							Enviar
 						</button>
 					</div>

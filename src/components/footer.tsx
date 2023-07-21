@@ -117,7 +117,7 @@ export const Footer: React.FC<FooterProps> = ({ isGreen }) => {
 					isGreen ? "border-green-100" : "border-green-700"
 				}`}
 			/>
-			<div className="max-lg:ods-footer-mobile lg:bg-ods-footer max-lg:h-20 lg:h-[42px] flex justify-center items-center">
+			<div className="max-lg:bg-ods-footer-mobile lg:bg-ods-footer max-lg:h-[59px] lg:h-[42px] flex justify-center items-center">
 				<p className="text-green-100 font-bold max-lg:hidden">
 					© 2023 Polobrasilzero by Blackelphant | Todos os direitos reservados
 				</p>

@@ -18,7 +18,10 @@ export const Input: React.FC<InputProps> = ({
 	return (
 		<>
 			{label ? (
-				<label htmlFor={name} className={"text-lg font-bold " + labelClasses}>
+				<label
+					htmlFor={name}
+					className={"text-lg font-bold text-green-800 " + labelClasses}
+				>
 					{label}
 				</label>
 			) : (
@@ -30,7 +33,7 @@ export const Input: React.FC<InputProps> = ({
 				id={name}
 				className={`${
 					label ? "mt-4" : ""
-				} rounded-md shadow-input h-[52px] p-3 ${inputClasses}`}
+				} rounded-md shadow-input h-[52px] p-3 text-green-800 ${inputClasses}`}
 				placeholder={placeholder}
 			/>
 		</>
