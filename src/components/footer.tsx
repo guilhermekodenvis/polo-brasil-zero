@@ -71,20 +71,17 @@ export const Footer: React.FC<FooterProps> = ({ isGreen }) => {
 						) : (
 							<>
 								<StaticImage
-									// className="w-16 h-16"
-									src="../images/facebook.svg"
+									src="../images/facebook.png"
 									alt="Nossa página no facebook."
 								/>
 								<StaticImage
 									className="ml-4"
-									// className="w-16 h-16 ml-4"
-									src="../images/linkedin.svg"
+									src="../images/linkedin.png"
 									alt="Nossa página no linkedIn."
 								/>
 								<StaticImage
 									className="ml-4"
-									// className="w-16 h-16 ml-4"
-									src="../images/instagram.svg"
+									src="../images/instagram.png"
 									alt="Nosso perfil no instagram."
 								/>
 							</>
@@ -120,7 +117,7 @@ export const Footer: React.FC<FooterProps> = ({ isGreen }) => {
 					isGreen ? "border-green-100" : "border-green-700"
 				}`}
 			/>
-			<div className="bg-red-600 max-lg:h-20 lg:h-14 flex justify-center items-center">
+			<div className="max-lg:ods-footer-mobile lg:bg-ods-footer max-lg:h-20 lg:h-[42px] flex justify-center items-center">
 				<p className="text-green-100 font-bold max-lg:hidden">
 					© 2023 Polobrasilzero by Blackelphant | Todos os direitos reservados
 				</p>

@@ -64,6 +64,11 @@ export const Navbar: React.FC = () => {
 					<li>Parceiros</li>
 					<li>
 						<button type="button" className="bt bt-primary shrink-0">
+							<StaticImage
+								alt="Ícone de baixar"
+								src="../images/send.svg"
+								className="bt-icon mr-3"
+							/>{" "}
 							Entrar em contato
 						</button>
 					</li>

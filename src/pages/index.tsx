@@ -86,7 +86,15 @@ const IndexPage: React.FC<PageProps> = () => {
 									Com reciclagem total das emissões líquidas e sólidas geradas,
 									seguindo padrões de economia circular e de baixo carbo.
 								</p>
-								<button type="button" className="bt bt-outline-primary mt-8">
+								<button
+									type="button"
+									className="bt bt-outline-primary mt-8 flex items-center"
+								>
+									<StaticImage
+										alt="Ícone de baixar"
+										src="../images/play-circle.png"
+										className="bt-icon mr-3"
+									/>{" "}
 									Conheça o projeto
 								</button>
 							</div>
@@ -107,7 +115,15 @@ const IndexPage: React.FC<PageProps> = () => {
 									responsabilidade socioambiental, alinhado com os objetivos de
 									desenvolvimento sustentável da ONU.
 								</p>
-								<button type="button" className="bt bt-outline-primary mt-8">
+								<button
+									type="button"
+									className="bt bt-outline-primary mt-8 flex items-center"
+								>
+									<StaticImage
+										alt="Ícone de baixar"
+										src="../images/play-circle.png"
+										className="bt-icon mr-3"
+									/>{" "}
 									Conheça o projeto
 								</button>
 							</div>
@@ -128,7 +144,15 @@ const IndexPage: React.FC<PageProps> = () => {
 									nós, nessa transformação verde rumo a DESCARBONIZAÇÃO da
 									indústria Brasileira com SUSTENTABILIDADE.
 								</p>
-								<button type="button" className="bt bt-outline-primary mt-8">
+								<button
+									type="button"
+									className="bt bt-outline-primary mt-8 flex items-center"
+								>
+									<StaticImage
+										alt="Ícone de baixar"
+										src="../images/play-circle.png"
+										className="bt-icon mr-3"
+									/>{" "}
 									Conheça o projeto
 								</button>
 							</div>
@@ -149,7 +173,15 @@ const IndexPage: React.FC<PageProps> = () => {
 									Tecnologia voltado para a Agricultura regenerativa BC,
 									Indústria 5.0 e Sociabilidade.
 								</p>
-								<button type="button" className="bt bt-outline-primary mt-8">
+								<button
+									type="button"
+									className="bt bt-outline-primary mt-8 flex items-center"
+								>
+									<StaticImage
+										alt="Ícone de baixar"
+										src="../images/play-circle.png"
+										className="bt-icon mr-3"
+									/>{" "}
 									Conheça o projeto
 								</button>
 							</div>
@@ -170,7 +202,15 @@ const IndexPage: React.FC<PageProps> = () => {
 									voltados para a TRANSFORMAÇÃO das PESSOAS e COMUNIDADE, com
 									urbanismo social de verdade.
 								</p>
-								<button type="button" className="bt bt-outline-primary mt-8">
+								<button
+									type="button"
+									className="bt bt-outline-primary mt-8 flex items-center"
+								>
+									<StaticImage
+										alt="Ícone de baixar"
+										src="../images/play-circle.png"
+										className="bt-icon mr-3"
+									/>{" "}
 									Conheça o projeto
 								</button>
 							</div>
@@ -184,10 +224,10 @@ const IndexPage: React.FC<PageProps> = () => {
 						<h2 className="lg:w-80 xl:w-auto text-green-800 max-lg:text-center">
 							Planta de venda do parque industrial
 						</h2>
-						<h3 className="mt-7 max-lg:text-center">
+						<h3 className="mt-7 max-lg:text-center text-green-800">
 							Nossos Lotes Sustentáveis
 						</h3>
-						<p className="mt-2 max-lg:text-center xl:pr-28 2xl:pr-60">
+						<p className="mt-2 max-lg:text-center xl:pr-28 2xl:pr-60 text-green-800">
 							Todos os lotes já estão equipados com tubulações centrais de
 							abastecimento e tratamento de água, rede de coleta dos efluentes
 							Industriais e sanitários ligado na ETE de água, rede de coleta dos
@@ -201,7 +241,7 @@ const IndexPage: React.FC<PageProps> = () => {
 						onClick={handleOpenVideo}
 					>
 						<StaticImage
-							className="rounded-3xl w-full"
+							className="rounded-3xl !w-full"
 							alt="Vídeo ilustrativo renderizado do Polo Brasil Zero"
 							src="../images/pbz-render-video-banner.png"
 							layout="fullWidth"
@@ -209,7 +249,7 @@ const IndexPage: React.FC<PageProps> = () => {
 						<StaticImage
 							alt="Ícone de play"
 							src="../images/play.svg"
-							className="absolute"
+							className="!absolute"
 						/>
 					</div>
 				</div>
@@ -266,7 +306,7 @@ const IndexPage: React.FC<PageProps> = () => {
 									src="../images/pre-sales-three.png"
 								/>
 							)}
-							<div className="absolute flex justify-between w-full px-14 lg:px-7">
+							<div className="absolute flex justify-between w-full max-lg:px-6 lg:px-7">
 								<a
 									href="#"
 									className="cursor-pointer"
@@ -306,7 +346,7 @@ const IndexPage: React.FC<PageProps> = () => {
 							>
 								<StaticImage
 									onClick={() => handleClickPreSaleImage(0)}
-									className={`w-[203px] rounded-2xl ${
+									className={`max-lg:w-[140px] lg:w-[203px] rounded-2xl ${
 										activedPreSalesImage === 0 &&
 										"border-[6px] border-green-700 bg-green-700"
 									}`}
@@ -323,7 +363,7 @@ const IndexPage: React.FC<PageProps> = () => {
 							>
 								<StaticImage
 									onClick={() => handleClickPreSaleImage(1)}
-									className={`max-lg:ml-5 w-[203px] rounded-2xl ${
+									className={`max-lg:ml-5 max-lg:w-[140px] lg:w-[203px] rounded-2xl ${
 										activedPreSalesImage === 1 &&
 										"border-[6px] border-green-700 bg-green-700"
 									}`}
@@ -340,7 +380,7 @@ const IndexPage: React.FC<PageProps> = () => {
 							>
 								<StaticImage
 									onClick={() => handleClickPreSaleImage(2)}
-									className={`max-lg:ml-5 w-[203px] rounded-2xl ${
+									className={`max-lg:ml-5 max-lg:w-[140px] lg:w-[203px] rounded-2xl ${
 										activedPreSalesImage === 2 &&
 										"border-[6px] border-green-700 bg-green-700"
 									}`}
@@ -358,7 +398,7 @@ const IndexPage: React.FC<PageProps> = () => {
 							<h3 className="mt-2 text-green-700 font-semibold">
 								Investimento em real estate
 							</h3>
-							<p className="text-center mt-10">
+							<p className="text-center mt-10 text-green-800">
 								Todos os lotes já estão equipados com tubulações centrais de
 								abastecimento e tratamento de água, rede de coleta dos efluentes
 								Industriais e sanitários ligado na ETE.
@@ -446,19 +486,12 @@ const IndexPage: React.FC<PageProps> = () => {
 							transformar o futuro da indústria, das pessoas e do planeta
 						</p>
 					</div>
-					<StaticImage
-						alt="Lista de todas as ODS's da ONU"
-						src="../images/odss.png"
-						className="shrink-0 lg:ml-20 max-lg:mt-12"
-						objectFit="contain"
-						layout="fullWidth"
-					/>
 				</div>
 			</section>
 			<section className="bg-green-700 w-full lg:h-[362px]">
 				<div className="bg-green-800 h-full wrapper-full flex !px-0 max-lg:flex-col lg:justify-center">
 					<div className="flex relative justify-center cursor-pointer overflow-hidden card-video lg:w-1/5">
-						<div className="bg-green-400 w-full h-full z-50 absolute top-0 left-0 mix-blend-multiply"></div>
+						<div className="bg-green-400 w-full h-full z-50 absolute top-0 left-0 mix-blend-multiply card-mask"></div>
 						<div className="from-black bg-gradient-to-t w-full h-2/5 absolute z-50 bottom-0"></div>
 						<StaticImage
 							className="shrink-0 card-banner w-full max-lg:h-80"
@@ -482,7 +515,7 @@ const IndexPage: React.FC<PageProps> = () => {
 						</div>
 					</div>
 					<div className="flex relative justify-center cursor-pointer overflow-hidden card-video lg:w-1/5">
-						<div className="bg-green-400 w-full h-full z-50 absolute top-0 left-0 mix-blend-multiply"></div>
+						<div className="bg-green-400 w-full h-full z-50 absolute top-0 left-0 mix-blend-multiply card-mask ease-in-out transition-all duration-300"></div>
 						<div className="from-black bg-gradient-to-t w-full h-2/5 absolute z-50 bottom-0"></div>
 						<StaticImage
 							className="shrink-0 card-banner w-full max-lg:h-80"
@@ -506,7 +539,7 @@ const IndexPage: React.FC<PageProps> = () => {
 						</div>
 					</div>
 					<div className="flex relative justify-center cursor-pointer overflow-hidden card-video lg:w-1/5">
-						<div className="bg-green-400 w-full h-full z-50 absolute top-0 left-0 mix-blend-multiply"></div>
+						<div className="bg-green-400 w-full h-full z-50 absolute top-0 left-0 mix-blend-multiply card-mask"></div>
 						<div className="from-black bg-gradient-to-t w-full h-2/5 absolute z-50 bottom-0"></div>
 						<StaticImage
 							className="shrink-0 card-banner w-full max-lg:h-80"
@@ -530,7 +563,7 @@ const IndexPage: React.FC<PageProps> = () => {
 						</div>
 					</div>
 					<div className="flex relative justify-center cursor-pointer overflow-hidden card-video lg:w-1/5">
-						<div className="bg-green-400 w-full h-full z-50 absolute top-0 left-0 mix-blend-multiply"></div>
+						<div className="bg-green-400 w-full h-full z-50 absolute top-0 left-0 mix-blend-multiply card-mask"></div>
 						<div className="from-black bg-gradient-to-t w-full h-2/5 absolute z-50 bottom-0"></div>
 						<StaticImage
 							className="shrink-0 card-banner w-full max-lg:h-80"
@@ -554,7 +587,7 @@ const IndexPage: React.FC<PageProps> = () => {
 						</div>
 					</div>
 					<div className="flex relative justify-center cursor-pointer overflow-hidden card-video lg:w-1/5">
-						<div className="bg-green-400 w-full h-full z-50 absolute top-0 left-0 mix-blend-multiply"></div>
+						<div className="bg-green-400 w-full h-full z-50 absolute top-0 left-0 mix-blend-multiply card-mask"></div>
 						<div className="from-black bg-gradient-to-t w-full h-2/5 absolute z-50 bottom-0"></div>
 						<StaticImage
 							className="shrink-0 card-banner w-full max-lg:h-80"

@@ -39,6 +39,8 @@ module.exports = {
 				"blog-page": "url('/img/blog-cover.png')",
 				"contact-page": "url('/img/contact-cover.png')",
 				"post-page": "url('/img/post-cover.png')",
+				"ods-footer": "url('/img/ods-footer.png')",
+				"ods-footer-mobile": "url('/img/ods-footer-mobile.png')",
 			},
 			boxShadow: {
 				input:
