@@ -13,14 +13,14 @@ export const NewsLetter: React.FC = () => {
 						type="text"
 						name=""
 						id=""
-						className="lg:ml-3 rounded-lg h-[52px] p-3 border border-green-700 w-48 max-lg:w-full max-lg:mt-9"
+						className="lg:ml-3 rounded-lg h-[52px] p-3 border border-green-700 w-48 max-lg:w-full max-lg:mt-9 text-green-800"
 						placeholder="Seu nome"
 					/>
 					<input
 						type="text"
 						name=""
 						id=""
-						className="lg:ml-3 rounded-lg h-[52px] p-3 border border-green-700 w-48 max-lg:w-full max-lg:mt-3"
+						className="lg:ml-3 rounded-lg h-[52px] p-3 border border-green-700 w-48 max-lg:w-full max-lg:mt-3 text-green-800"
 						placeholder="Seu e-mail"
 					/>
 					<button

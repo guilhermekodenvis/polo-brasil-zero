@@ -26,7 +26,7 @@ export const Navbar: React.FC = () => {
 			}`}
 		>
 			<div className="wrapper-full flex justify-between items-center">
-				<a href="#" className="shrink-0 w-[136px]">
+				<a href="https://polobrasilzero.com/" className="shrink-0 w-[136px]">
 					<StaticImage
 						loading="lazy"
 						src="../images/logo-white.svg"

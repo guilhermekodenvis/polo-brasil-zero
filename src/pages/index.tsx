@@ -6,11 +6,14 @@ import { Input } from "../components/input";
 import { Navbar } from "../components/navbar";
 import { Footer } from "../components/footer";
 import { NewsLetter } from "../components/news-letter";
+import { Selectable } from "../components/selectable";
 
 const IndexPage: React.FC<PageProps> = () => {
 	const [activedSlide, setActivedSlide] = React.useState(0);
 	const [activedPreSalesImage, setActivedPreSalesImage] = React.useState(0);
 	const [isVideoOpen, setIsVideoOpen] = React.useState(false);
+	const [contactTypeSelectedOption, setContactTypeSelectedOption] =
+		React.useState(-1);
 
 	React.useEffect(() => {
 		console.log(activedPreSalesImage);
@@ -776,7 +779,17 @@ const IndexPage: React.FC<PageProps> = () => {
 							label="Telefone:"
 							labelClasses="mt-6"
 						/>
-						{/* <Input /> */}
+						<Selectable
+							label="Tipo de contato:"
+							labelClasses="mt-6"
+							name="contactType"
+							placeholder="Selecione o motivo do contato"
+							options={["Comprar um terreno", "Fazer parceria", "Outro motivo"]}
+							handleSelectOption={(i: number) => {
+								setContactTypeSelectedOption(i);
+							}}
+							selectedOption={contactTypeSelectedOption}
+						/>
 						<span className="block mx-auto mt-6 font-medium text-green-800">
 							<input
 								type="checkbox"
@@ -800,6 +813,16 @@ const IndexPage: React.FC<PageProps> = () => {
 					</div>
 				</div>
 			</section>
+			<a
+				href="https://wa.me/5511971657007?text=Ol%C3%A1%2C+quero+saber+mais+sobre+o+projeto+Polo+Brasil+Zero."
+				className="fixed bottom-10 right-10 w-14 h-14 z-50"
+			>
+				<StaticImage
+					alt="Ícone de enviar mensagem pelo whatsapp"
+					src="../images/whatsapp-icon.png"
+					className=""
+				/>
+			</a>
 			<NewsLetter />
 			<Footer />
 		</>

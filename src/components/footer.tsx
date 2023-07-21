@@ -9,7 +9,7 @@ export const Footer: React.FC<FooterProps> = ({ isGreen }) => {
 	return (
 		<footer className={isGreen ? "bg-green-700" : "bg-white"}>
 			<div className="wrapper-full flex py-8 justify-between max-lg:flex-col max-lg:items-center">
-				<div className="lg:w-[300px] flex items-center flex-col">
+				<div className="lg:w-[300px] flex max-lg:items-center lg:items-start flex-col">
 					{isGreen ? (
 						<StaticImage
 							className="object-left-top"
@@ -18,8 +18,8 @@ export const Footer: React.FC<FooterProps> = ({ isGreen }) => {
 						/>
 					) : (
 						<StaticImage
-							className="object-left-top"
-							src="../images/logo-green.svg"
+							className="object-left-top w-[200px]"
+							src="../images/logo-green.png"
 							alt="Logo da empresa Polo Brasil Zero."
 						/>
 					)}
@@ -47,7 +47,7 @@ export const Footer: React.FC<FooterProps> = ({ isGreen }) => {
 					>
 						Nos siga nas redes sociais
 					</h3>
-					<div className="mt-3 flex items-center justify-center">
+					<div className="mt-3 flex items-center max-lg:justify-center lg:justify-start">
 						{isGreen ? (
 							<>
 								<StaticImage
@@ -98,17 +98,21 @@ export const Footer: React.FC<FooterProps> = ({ isGreen }) => {
 						Menu
 					</h3>
 					<ul
-						className={`footer-menu ${
+						className={`footer-menu flex ${
 							isGreen ? "is-green" : ""
 						} max-lg:flex max-lg:flex-wrap`}
 					>
-						<li className="max-lg:mr-6">Esg - Blog</li>
-						<li className="max-lg:mr-6">Sobre Nós</li>
-						<li className="max-lg:mr-6">Sustentabilidade</li>
-						<li className="max-lg:mr-6">Terrenos</li>
-						<li className="max-lg:mr-6">Parceiros</li>
-						<li className="max-lg:mr-6">Contato</li>
-						<li className="font-bold">Baixar mídia kit</li>
+						<div>
+							<li className="max-lg:mr-6">Esg - Blog</li>
+							<li className="max-lg:mr-6">Sobre Nós</li>
+							<li className="max-lg:mr-6">Sustentabilidade</li>
+							<li className="max-lg:mr-6">Terrenos</li>
+						</div>
+						<div className="ml-10">
+							<li className="max-lg:mr-6">Parceiros</li>
+							<li className="max-lg:mr-6">Contato</li>
+							<li className="font-bold">Baixar mídia kit</li>
+						</div>
 					</ul>
 				</div>
 			</div>
