@@ -453,7 +453,7 @@ const IndexPage: React.FC<PageProps> = () => {
 						<StaticImage
 							alt="Ícone de play"
 							src="../images/play.svg"
-							className="absolute"
+							className="!absolute"
 						/>
 					</div>
 				</div>
