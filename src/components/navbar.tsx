@@ -1,7 +1,26 @@
 import { StaticImage } from "gatsby-plugin-image";
 import React from "react";
+import { navigate } from "gatsby";
 
-export const Navbar: React.FC = () => {
+type NavbarProps = {
+	ourGroundReference?: React.RefObject<HTMLDivElement>;
+	aboutUsReference?: React.RefObject<HTMLDivElement>;
+	sustentabilityReference?: React.RefObject<HTMLDivElement>;
+	netzeroReference?: React.RefObject<HTMLDivElement>;
+	partinersReference?: React.RefObject<HTMLDivElement>;
+	esgReference?: React.RefObject<HTMLDivElement>;
+	contactReference?: React.RefObject<HTMLDivElement>;
+};
+
+export const Navbar: React.FC<NavbarProps> = ({
+	ourGroundReference,
+	aboutUsReference,
+	sustentabilityReference,
+	netzeroReference,
+	partinersReference,
+	esgReference,
+	contactReference,
+}) => {
 	const [scrollDown, setScrollDown] = React.useState(false);
 	const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
@@ -18,6 +37,23 @@ export const Navbar: React.FC = () => {
 			window.removeEventListener("scroll", handleScroll);
 		};
 	}, []);
+
+	const handleGoToAnchor = (ref?: React.RefObject<HTMLDivElement>) => {
+		if (!ref) {
+			navigate("/");
+			return;
+		}
+		const section = ref.current;
+		if (section) {
+			const y = section.getBoundingClientRect().top + window.scrollY - 121;
+
+			window.scrollTo({ top: y, behavior: "smooth" });
+		}
+	};
+
+	const handleGoToTop = () => {
+		window.scrollTo({ top: 0, behavior: "smooth" });
+	};
 
 	return (
 		<nav
@@ -56,12 +92,36 @@ export const Navbar: React.FC = () => {
 							/>
 						</a>
 					</li>
-					<li>Home</li>
-					<li>ESG</li>
-					<li>Sobre nós</li>
-					<li>Sustentabilidade</li>
-					<li>Lotes</li>
-					<li>Parceiros</li>
+					<li>
+						<a onClick={(_) => handleGoToTop()}>Homepage</a>
+					</li>
+					<li>
+						<a onClick={(_) => handleGoToAnchor(ourGroundReference)}>
+							Nosso terreno
+						</a>
+					</li>
+					<li>
+						<a onClick={(_) => handleGoToAnchor(aboutUsReference)}>Sobre nós</a>
+					</li>
+					<li>
+						<a onClick={(_) => handleGoToAnchor(sustentabilityReference)}>
+							Sustentabilidade
+						</a>
+					</li>
+					<li>
+						<a onClick={(_) => handleGoToAnchor(netzeroReference)}>Netzero</a>
+					</li>
+					<li>
+						<a onClick={(_) => handleGoToAnchor(partinersReference)}>
+							Parceiros
+						</a>
+					</li>
+					<li>
+						<a onClick={(_) => handleGoToAnchor(esgReference)}>ESG</a>
+					</li>
+					<li>
+						<a onClick={(_) => handleGoToAnchor(contactReference)}>Contato</a>
+					</li>
 					<li>
 						<button type="button" className="bt bt-primary shrink-0">
 							<StaticImage

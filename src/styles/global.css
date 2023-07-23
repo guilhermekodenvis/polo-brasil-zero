@@ -2,6 +2,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
 
 * {
 	@apply m-0 p-0 box-border outline-0 text-base font-normal font-sans text-black;
@@ -41,12 +43,12 @@ h4 {
 }
 
 .active {
-	@apply flex absolute top-0 left-0;
+	@apply flex absolute top-0 left-0 transition-all duration-300 ease-in-out;
 }
 
-/* .inactive {
-	@apply animate-slide-out;
-} */
+.inactive {
+	@apply animate-slide-out transition-all duration-300 ease-in-out;
+}
 
 .invisible-scrollbar::-webkit-scrollbar {
 	width: 0.4em;
@@ -95,14 +97,14 @@ h4 {
 }
 
 .nav-menu {
-	@apply flex content-center justify-between max-lg:hidden;
+	@apply flex items-center justify-between max-lg:hidden;
 }
 
 .nav-menu.nav-menu-open {
 	@apply bg-green-500 flex flex-col w-[320px] h-screen absolute top-0 right-0 justify-start p-14;
 }
 
-.nav-menu li {
+.nav-menu li a {
 	@apply text-green-100 font-bold text-lg flex content-center flex-wrap cursor-pointer;
 }
 
@@ -136,4 +138,24 @@ h4 {
 
 .footer-menu.is-green li {
 	@apply text-green-100;
+}
+
+.slick-dots {
+	transform: translateY(-40px);
+}
+
+.slick-dots li {
+	@apply w-fit;
+}
+
+.slick-dots li button {
+	@apply w-12 h-[6px] bg-gray-500 rounded-full;
+}
+
+.slick-dots .slick-active button {
+	@apply bg-green-500;
+}
+
+.slick-dots li button::before {
+	content: "";
 }

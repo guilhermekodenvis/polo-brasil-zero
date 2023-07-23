@@ -29,14 +29,7 @@ export const Footer: React.FC<FooterProps> = ({ isGreen }) => {
 							isGreen ? "text-green-100" : "text-green-700"
 						}`}
 					>
-						contato@polobrasilzero.com.br
-					</span>
-					<span
-						className={`mt-3 block ${
-							isGreen ? "text-green-100" : "text-green-700"
-						}`}
-					>
-						Tel. +55 {"("}11{")"} 1234-5678
+						lhmt@polobrasilzero.com
 					</span>
 				</div>
 				<div className="lg:w-[300px] max-lg:flex max-lg:flex-col max-lg:items-center">

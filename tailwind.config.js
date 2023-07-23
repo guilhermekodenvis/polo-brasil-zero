@@ -41,6 +41,7 @@ module.exports = {
 				"post-page": "url('/img/post-cover.png')",
 				"ods-footer": "url('/img/ods-footer.png')",
 				"ods-footer-mobile": "url('/img/ods-footer-mobile.png')",
+				colorful: "url('/img/colorful-bg.svg')",
 			},
 			boxShadow: {
 				input:
@@ -72,10 +73,10 @@ module.exports = {
 					},
 				},
 			},
-			// animation: {
-			// 	"slide-in": "slide-in 1s ease-in-out forwards",
-			// 	"slide-out": "slide-out 1s ease-in-out forwards",
-			// },
+			animation: {
+				"slide-in": "slide-in 1s ease-in-out forwards",
+				"slide-out": "slide-out 1s ease-in-out forwards",
+			},
 		},
 	},
 	plugins: [],
