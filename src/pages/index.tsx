@@ -92,10 +92,11 @@ const IndexPage: React.FC<PageProps> = () => {
 				>
 					<div className="w-[1000px] bg-black h-[600px]">
 						<iframe
-							src={`${selectedVideoShow}`}
 							width="1000"
 							height="600"
-							allow="autoplay"
+							src={`${selectedVideoShow}`}
+							title="YouTube video player"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 						></iframe>
 					</div>
 				</div>
@@ -251,15 +252,13 @@ const IndexPage: React.FC<PageProps> = () => {
 						className="lg:w-[450px] lg:h-[340px] shrink-0 ml-20 relative flex justify-center
 						items-center cursor-pointer max-lg:mt-5 max-lg:w-full max-lg:ml-0"
 						onClick={(_) =>
-							handleOpenVideo(
-								"https://drive.google.com/file/d/1NR5syE41zWPHUn62BRS3dH7WG17kpN5N/view?usp=sharing"
-							)
+							handleOpenVideo("https://www.youtube.com/embed/FuCpCoSmRBg")
 						}
 					>
 						<StaticImage
-							className="rounded-3xl !w-full"
+							className="rounded-3xl !w-full border border-green-500"
 							alt="Vídeo ilustrativo renderizado do Polo Brasil Zero"
-							src="../images/pbz-render-video-banner.png"
+							src="../images/pbz-render-video-banner.webp"
 							layout="fullWidth"
 						/>
 						<StaticImage
@@ -472,17 +471,19 @@ const IndexPage: React.FC<PageProps> = () => {
 					</div>
 					<div
 						className="w-full h-auto lg:w-[450px] lg:h-[340px] shrink-0 lg:ml-20 relative flex justify-center items-center cursor-pointer max-lg:mt-7"
-						onClick={(_) => handleOpenVideo("")}
+						onClick={(_) =>
+							handleOpenVideo("https://www.youtube.com/embed/b6SDcbE3y98")
+						}
 					>
 						<StaticImage
-							className="rounded-3xl w-full"
+							className="rounded-3xl w-full border border-green-500"
 							alt="Vídeo ilustrativo renderizado do Polo Brasil Zero"
-							src="../images/pbz-render-video-banner.png"
+							src="../images/pbz-render-video-banner-2.webp"
 							layout="fullWidth"
 						/>
 						<StaticImage
 							alt="Ícone de play"
-							src="../images/play.svg"
+							src="../images/play-green.svg"
 							className="!absolute"
 						/>
 					</div>
@@ -705,7 +706,25 @@ const IndexPage: React.FC<PageProps> = () => {
 								Líquidas Zero a partir de 2024.
 							</p>
 						</div>
-						<div className="bg-black w-[360px] h-[360px] shrink-0 lg:ml-52 max-lg:mt-16"></div>
+						<div
+							className="lg:w-[450px] lg:h-[340px] shrink-0 ml-20 relative flex justify-center
+						items-center cursor-pointer max-lg:mt-5 max-lg:w-full max-lg:ml-0"
+							onClick={(_) =>
+								handleOpenVideo("https://www.youtube.com/embed/fL2jcCSN2pc")
+							}
+						>
+							<StaticImage
+								className="rounded-3xl !w-full border border-green-500"
+								alt="Vídeo ilustrativo renderizado do Polo Brasil Zero"
+								src="../images/pbz-render-video-banner-3.jpg"
+								layout="fullWidth"
+							/>
+							<StaticImage
+								alt="Ícone de play"
+								src="../images/play.svg"
+								className="!absolute"
+							/>
+						</div>
 					</div>
 					<h2
 						className="mt-10 pt-10 text-green-800 lg:w-full"
