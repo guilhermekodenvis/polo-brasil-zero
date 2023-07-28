@@ -23,10 +23,12 @@ const IndexPage: React.FC<PageProps> = () => {
 	const partinersRef = React.useRef<HTMLDivElement>(null);
 	const esgRef = React.useRef<HTMLDivElement>(null);
 	const contactRef = React.useRef<HTMLDivElement>(null);
+	const videoRef = React.useRef<HTMLVideoElement>(null);
 
 	React.useEffect(() => {
-		console.log(activedPreSalesImage);
-	}, [activedPreSalesImage]);
+		const myVideo = document.getElementById("myVideo");
+		myVideo?.play();
+	}, []);
 
 	const handleCloseVideoClick = () => {
 		setIsVideoOpen(false);
@@ -90,10 +92,9 @@ const IndexPage: React.FC<PageProps> = () => {
 					className="fixed w-screen h-screen top-0 left-0 bg-black/60 flex justify-center items-center z-[999]"
 					onClick={handleCloseVideoClick}
 				>
-					<div className="w-[1000px] bg-black h-[600px]">
+					<div className="xs:w-[320px] sm:w-[480px] md:w-[780px] xl:w-[1000px] xs:h-[192px] sm:h-[288px] md:h-[468px] xl:h-[600px] mx-auto bg-black">
 						<iframe
-							width="1000"
-							height="600"
+							className="xs:w-[320px] sm:w-[480px] md:w-[780px] xl:w-[1000px] xs:h-[192px] sm:h-[288px] md:h-[468px] xl:h-[600px] mx-auto"
 							src={`${selectedVideoShow}`}
 							title="YouTube video player"
 							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -103,7 +104,16 @@ const IndexPage: React.FC<PageProps> = () => {
 			)}
 			<header>
 				<Slider {...settings}>
-					<div className="bg-first-slide h-[540px] bg-no-repeat bg-cover">
+					<div className="h-[540px] bg-no-repeat bg-cover bg-center relative">
+						<video
+							ref={videoRef}
+							muted
+							loop
+							id="myVideo"
+							className="absolute w-screen top-0 left-0 h-full -z-10"
+						>
+							<source src="/img/first-slide.mp4" type="video/mp4" />
+						</video>
 						<div className="bg-gradient-green h-[540px] w-screen">
 							<div className="wrapper-full">
 								<h1 className="text-green-100 pt-40 lg:w-[400px]">
@@ -128,7 +138,7 @@ const IndexPage: React.FC<PageProps> = () => {
 						</div>
 					</div>
 
-					<div className="bg-second-slide h-[540px] bg-no-repeat bg-cover">
+					<div className="bg-second-slide h-[540px] bg-no-repeat bg-cover bg-center">
 						<div className="bg-gradient-green h-[540px] w-screen">
 							<div className="wrapper-full">
 								<h1 className="text-green-100 pt-40 lg:w-[400px]">
@@ -154,7 +164,7 @@ const IndexPage: React.FC<PageProps> = () => {
 						</div>
 					</div>
 
-					<div className="bg-third-slide h-[540px] bg-no-repeat bg-cover">
+					<div className="bg-third-slide h-[540px] bg-no-repeat bg-cover bg-center">
 						<div className="bg-gradient-green h-[540px] w-screen">
 							<div className="wrapper-full">
 								<h1 className="text-green-100 pt-40 lg:w-[400px]">
@@ -180,7 +190,7 @@ const IndexPage: React.FC<PageProps> = () => {
 						</div>
 					</div>
 
-					<div className="bg-fourth-slide h-[540px] bg-no-repeat bg-cover">
+					<div className="bg-fourth-slide h-[540px] bg-no-repeat bg-cover bg-center">
 						<div className="bg-gradient-green h-[540px] w-screen">
 							<div className="wrapper-full">
 								<h1 className="text-green-100 pt-40 lg:w-[400px]">
@@ -206,7 +216,7 @@ const IndexPage: React.FC<PageProps> = () => {
 						</div>
 					</div>
 
-					<div className="bg-fifth-slide h-[540px] bg-no-repeat bg-cover">
+					<div className="bg-fifth-slide h-[540px] bg-no-repeat bg-cover bg-center">
 						<div className="bg-gradient-green h-[540px] w-screen">
 							<div className="wrapper-full">
 								<h1 className="text-green-100 pt-40 lg:w-[400px]">
@@ -295,8 +305,8 @@ const IndexPage: React.FC<PageProps> = () => {
 					</button>
 				</div>
 			</section>
-			<section className="lg:bg-colorful py-8 wrapper-full bg-no-repeat bg-center bg-cover">
-				<div className="flex max-lg:flex-col bg-white rounded-3xl lg:!p-7 justify-between items-center">
+			<section className="bg-colorful py-8 wrapper-full bg-no-repeat bg-center bg-cover">
+				<div className="flex max-lg:p-4 max-lg:flex-col bg-white rounded-3xl lg:!p-7 justify-between items-center">
 					<div className="max-lg:w-full">
 						<div className="relative flex justify-center items-center">
 							{activedPreSalesImage === 0 && (
@@ -410,7 +420,7 @@ const IndexPage: React.FC<PageProps> = () => {
 							<h2 className="text-green-700 text-center">
 								Pré lançamento de vendas
 							</h2>
-							<h3 className="mt-2 text-green-700 font-semibold">
+							<h3 className="mt-2 text-green-700 font-semibold text-center">
 								Investimento em real estate
 							</h3>
 							<p className="text-center mt-10 text-green-800">
@@ -540,7 +550,7 @@ const IndexPage: React.FC<PageProps> = () => {
 							className="shrink-0 card-banner w-full max-lg:h-80"
 							imgClassName="object-left-top"
 							alt="Banner do vídeo"
-							src="../images/video-one.png"
+							src="../images/video-one.jpg"
 							layout="fullWidth"
 						/>
 						<a className=" border-4 border-white mx-auto top-32 absolute z-[60] rounded-full flex justify-center items-center w-20 h-20">
@@ -567,7 +577,7 @@ const IndexPage: React.FC<PageProps> = () => {
 							imgClassName="object-left-top"
 							layout="fullWidth"
 							alt="Banner do vídeo"
-							src="../images/video-two.png"
+							src="../images/video-two.jpg"
 						/>
 						<a className=" border-4 border-white mx-auto top-32 absolute z-[60] rounded-full flex justify-center items-center w-20 h-20">
 							<StaticImage
@@ -589,11 +599,11 @@ const IndexPage: React.FC<PageProps> = () => {
 						<div className="bg-green-400 w-full h-full z-50 absolute top-0 left-0 mix-blend-multiply card-mask"></div>
 						<div className="from-black bg-gradient-to-t w-full h-2/5 absolute z-50 bottom-0"></div>
 						<StaticImage
-							className="shrink-0 card-banner w-full max-lg:h-80"
+							className="shrink-0 card-banner w-full max-lg:h-80 justify-center items-center"
 							imgClassName="object-left-top"
 							layout="fullWidth"
 							alt="Banner do vídeo"
-							src="../images/video-three.png"
+							src="../images/video-three.jpg"
 						/>
 						<a className=" border-4 border-white mx-auto top-32 absolute z-[60] rounded-full flex justify-center items-center w-20 h-20">
 							<StaticImage
@@ -645,11 +655,11 @@ const IndexPage: React.FC<PageProps> = () => {
 							imgClassName="object-left-top"
 							layout="fullWidth"
 							alt="Banner do vídeo"
-							src="../images/video-five.png"
+							src="../images/video-five.jpg"
 						/>
 						<a className=" border-4 border-white mx-auto top-32 absolute z-[60] rounded-full flex justify-center items-center w-20 h-20">
 							<StaticImage
-								className="w-6 ml-2"
+								className="w-6 ml-2 bg-center object-center"
 								alt="Clique aqui para dar play"
 								src="../images/play-outline.svg"
 							/>
@@ -688,16 +698,16 @@ const IndexPage: React.FC<PageProps> = () => {
 								pelo Protocolo de Gases de Efeito Estufa (GHG).
 								<br />
 								<br />
-								<b className="text-green-800 flex">Escopo 1: </b>Refere-se às
+								<b className="text-green-800 inline">Escopo 1: </b>Refere-se às
 								emissões diretas provenientes das atividades próprias da
 								indústria.
 								<br />
 								<br />
-								<b className="text-green-800 flex">Escopo 2: </b>Abrange as
+								<b className="text-green-800 inline">Escopo 2: </b>Abrange as
 								emissões associadas à energia elétrica adquirida.
 								<br />
 								<br />
-								<b className="text-green-800 flex">Escopo 3: </b>Inclui as
+								<b className="text-green-800 inline">Escopo 3: </b>Inclui as
 								emissões indiretas de atividades da cadeia de suprimentos e uso
 								dos produtos.
 								<br />
@@ -727,7 +737,7 @@ const IndexPage: React.FC<PageProps> = () => {
 						</div>
 					</div>
 					<h2
-						className="mt-10 pt-10 text-green-800 lg:w-full"
+						className="mt-10 pt-10 text-green-800 lg:w-full max-lg:text-center"
 						ref={partinersRef}
 					>
 						Parceiros estratégicos:
@@ -737,6 +747,17 @@ const IndexPage: React.FC<PageProps> = () => {
 							<StaticImage
 								alt="Imagem de um parceiro estratégico"
 								src="../images/partner-one.png"
+								layout="fixed"
+							/>
+						</a>
+						<a
+							href="https://www.pactoglobal.org.br/pg/hub-ods/"
+							target="_blank"
+						>
+							<StaticImage
+								className="max-lg:mt-10"
+								alt="Imagem de um parceiro estratégico"
+								src="../images/partner-three.png"
 								layout="fixed"
 							/>
 						</a>
