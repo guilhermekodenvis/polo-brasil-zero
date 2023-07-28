@@ -112,7 +112,7 @@ const IndexPage: React.FC<PageProps> = () => {
 							id="myVideo"
 							className="absolute w-screen top-0 left-0 h-full -z-10"
 						>
-							<source src="/img/first-slide.mp4" type="video/mp4" />
+							<source src="/img/first-slidee.mp4" type="video/mp4" />
 						</video>
 						<div className="bg-gradient-green h-[540px] w-screen">
 							<div className="wrapper-full">
