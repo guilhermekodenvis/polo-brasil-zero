@@ -8,6 +8,7 @@ import { Footer } from "../components/footer";
 import { NewsLetter } from "../components/news-letter";
 import { Selectable } from "../components/selectable";
 import Slider from "react-slick";
+import netzeroGif from "../images/netzero.gif";
 
 const IndexPage: React.FC<PageProps> = () => {
 	const [activedSlide, setActivedSlide] = React.useState(0);
@@ -110,39 +111,14 @@ const IndexPage: React.FC<PageProps> = () => {
 							muted
 							loop
 							id="myVideo"
-							className="absolute w-screen top-0 left-0 h-full -z-10"
+							className="absolute w-screen top-0 left-0 h-full -z-10 object-cover"
 						>
 							<source src="/img/first-slidee.mp4" type="video/mp4" />
 						</video>
 						<div className="bg-gradient-green h-[540px] w-screen">
 							<div className="wrapper-full">
 								<h1 className="text-green-100 pt-40 lg:w-[400px]">
-									Primeiro Parque industrial ZERO EMISSÕES do Brasil
-								</h1>
-								<p className="text-green-100 mt-2 lg:w-[580px]">
-									Com reciclagem total das emissões líquidas e sólidas geradas,
-									seguindo padrões de economia circular e de baixo carbo.
-								</p>
-								<button
-									type="button"
-									className="bt bt-outline-primary mt-8 flex items-center"
-								>
-									<StaticImage
-										alt="Ícone de baixar"
-										src="../images/play-circle.png"
-										className="bt-icon mr-3"
-									/>{" "}
-									Conheça o projeto
-								</button>
-							</div>
-						</div>
-					</div>
-
-					<div className="bg-second-slide h-[540px] bg-no-repeat bg-cover bg-center">
-						<div className="bg-gradient-green h-[540px] w-screen">
-							<div className="wrapper-full">
-								<h1 className="text-green-100 pt-40 lg:w-[400px]">
-									Centro Sustentável Polo Brazil Zero
+									Centro Sustentável POLO BRASIL ZERO
 								</h1>
 								<p className="text-green-100 mt-2 lg:w-[580px]">
 									Uma iniciativa privada, onde a inovação se encontra com a
@@ -164,16 +140,40 @@ const IndexPage: React.FC<PageProps> = () => {
 						</div>
 					</div>
 
+					<div className="bg-second-slide h-[540px] bg-no-repeat bg-cover bg-center">
+						<div className="bg-gradient-green h-[540px] w-screen">
+							<div className="wrapper-full">
+								<h1 className="text-green-100 pt-40 lg:w-[400px]">
+									Primeiro Parque industrial ZERO EMISSÕES do Brasil
+								</h1>
+								<p className="text-green-100 mt-2 lg:w-[580px]">
+									Com reciclagem total das emissões geradas: líquidas, sólidas e
+									GEEs, seguindo padrões de economia circular e de baixo carbo.
+								</p>
+								<button
+									type="button"
+									className="bt bt-outline-primary mt-8 flex items-center"
+								>
+									<StaticImage
+										alt="Ícone de baixar"
+										src="../images/play-circle.png"
+										className="bt-icon mr-3"
+									/>{" "}
+									Conheça o projeto
+								</button>
+							</div>
+						</div>
+					</div>
+
 					<div className="bg-third-slide h-[540px] bg-no-repeat bg-cover bg-center">
 						<div className="bg-gradient-green h-[540px] w-screen">
 							<div className="wrapper-full">
 								<h1 className="text-green-100 pt-40 lg:w-[400px]">
-									Uma empresa que se importa com o meio ambiente
+									Aqui construímos um futuro sem emissões diretas
 								</h1>
 								<p className="text-green-100 mt-2 lg:w-[580px]">
-									Aqui construímos um futuro sem emissões diretas. Junte-se a
-									nós, nessa transformação verde rumo a DESCARBONIZAÇÃO da
-									indústria Brasileira com SUSTENTABILIDADE.
+									Junte-se a nós, nessa transformação verde rumo a
+									DESCARBONIZAÇÃO da indústria Brasileira com SUSTENTABILIDADE.
 								</p>
 								<button
 									type="button"
@@ -499,14 +499,14 @@ const IndexPage: React.FC<PageProps> = () => {
 					</div>
 				</div>
 
-				<div className="flex wrapper-full mt-24 items-center max-lg:flex-col-reverse">
+				<div className="flex wrapper-full mt-24 items-center max-lg:flex-col">
 					<StaticImage
 						alt="Imagem que mostra o plano ESG. (ambiental, social, governança, econômico, tecnológico)"
 						src="../images/esg.png"
 						className="shrink-0 max-lg:mt-12"
 					/>
-					<div className="lg:ml-64 max-lg:text-center">
-						<h3 className="text-green-800">Visão de Liderança</h3>
+					<div className="lg:ml-10 max-lg:text-center">
+						<h3 className="text-green-800 max-lg:mt-10">Visão de Liderança</h3>
 						<p className="mt-2 text-green-800">
 							Nosso Chamado para liderança em sustentabilidade é inspirar,
 							motivar e promover uma mudança cultural, acreditamos que impactar
@@ -518,13 +518,32 @@ const IndexPage: React.FC<PageProps> = () => {
 							Saiba mais
 						</button>
 					</div>
+					<div
+						className="lg:w-[450px] lg:h-[340px] shrink-0 ml-20 relative flex justify-center
+						items-center cursor-pointer max-lg:mt-5 max-lg:w-full max-lg:ml-0 lg:ml-10"
+						onClick={(_) =>
+							handleOpenVideo("https://www.youtube.com/embed/fL2jcCSN2pc")
+						}
+					>
+						<StaticImage
+							className="rounded-3xl !w-full border border-green-500"
+							alt="Vídeo ilustrativo renderizado do Polo Brasil Zero"
+							src="../images/pbz-render-video-banner-3.jpg"
+							layout="fullWidth"
+						/>
+						<StaticImage
+							alt="Ícone de play"
+							src="../images/play.svg"
+							className="!absolute"
+						/>
+					</div>
 				</div>
 
 				<div
-					className="wrapper-full flex max-lg:flex-col justify-center"
+					className="wrapper-full flex max-lg:flex-col justify-center lg:justify-between lg:mt-10"
 					ref={sustentabilityRef}
 				>
-					<div className="max-lg:text-center  mt-20">
+					<div className="max-lg:text-center  mt-20 ">
 						<h2 className="text-green-800">Sustentabilidade</h2>
 						<p className="mt-7 text-green-800">
 							Descubra como a adoção de boas práticas e o foco na
@@ -718,22 +737,15 @@ const IndexPage: React.FC<PageProps> = () => {
 						</div>
 						<div
 							className="lg:w-[450px] lg:h-[340px] shrink-0 ml-20 relative flex justify-center
-						items-center cursor-pointer max-lg:mt-5 max-lg:w-full max-lg:ml-0"
-							onClick={(_) =>
-								handleOpenVideo("https://www.youtube.com/embed/fL2jcCSN2pc")
-							}
+							items-center  max-lg:mt-5 max-lg:w-full max-lg:ml-0"
 						>
-							<StaticImage
-								className="rounded-3xl !w-full border border-green-500"
+							<img src={netzeroGif} alt="" />
+							{/* <StaticImage
+								className="rounded-3xl !w-full "
 								alt="Vídeo ilustrativo renderizado do Polo Brasil Zero"
-								src="../images/pbz-render-video-banner-3.jpg"
+								src="../images/netzero.gif"
 								layout="fullWidth"
-							/>
-							<StaticImage
-								alt="Ícone de play"
-								src="../images/play.svg"
-								className="!absolute"
-							/>
+							/> */}
 						</div>
 					</div>
 					<h2
