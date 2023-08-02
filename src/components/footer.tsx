@@ -1,11 +1,47 @@
 import { StaticImage } from "gatsby-plugin-image";
 import React from "react";
+import { navigate } from "gatsby";
 
 type FooterProps = {
 	isGreen?: boolean;
+	ourGroundReference?: React.RefObject<HTMLDivElement>;
+	aboutUsReference?: React.RefObject<HTMLDivElement>;
+	sustentabilityReference?: React.RefObject<HTMLDivElement>;
+	netzeroReference?: React.RefObject<HTMLDivElement>;
+	partinersReference?: React.RefObject<HTMLDivElement>;
+	esgReference?: React.RefObject<HTMLDivElement>;
+	contactReference?: React.RefObject<HTMLDivElement>;
 };
 
-export const Footer: React.FC<FooterProps> = ({ isGreen }) => {
+export const Footer: React.FC<FooterProps> = ({
+	isGreen,
+	ourGroundReference,
+	aboutUsReference,
+	sustentabilityReference,
+	netzeroReference,
+	partinersReference,
+	esgReference,
+	contactReference,
+}) => {
+	const [scrollDown, setScrollDown] = React.useState(false);
+
+	const handleGoToAnchor = (ref?: React.RefObject<HTMLDivElement>) => {
+		if (!ref) {
+			navigate("/");
+			return;
+		}
+		const section = ref.current;
+		if (section) {
+			const y = section.getBoundingClientRect().top + window.scrollY - 121;
+
+			window.scrollTo({ top: y, behavior: "smooth" });
+		}
+	};
+
+	const handleGoToTop = () => {
+		window.scrollTo({ top: 0, behavior: "smooth" });
+	};
+
 	return (
 		<footer className={isGreen ? "bg-green-700" : "bg-white"}>
 			<div className="wrapper-full flex py-8 justify-between max-lg:flex-col max-lg:items-center">
@@ -96,14 +132,36 @@ export const Footer: React.FC<FooterProps> = ({ isGreen }) => {
 						} max-lg:flex max-lg:flex-wrap`}
 					>
 						<div>
-							<li className="max-lg:mr-6">Esg - Blog</li>
-							<li className="max-lg:mr-6">Sobre Nós</li>
-							<li className="max-lg:mr-6">Sustentabilidade</li>
-							<li className="max-lg:mr-6">Terrenos</li>
+							<li className="max-lg:mr-6">
+								<a onClick={() => handleGoToAnchor(esgReference)}>Esg - Blog</a>
+							</li>
+							<li className="max-lg:mr-6">
+								<a onClick={() => handleGoToAnchor(aboutUsReference)}>
+									Sobre Nós
+								</a>
+							</li>
+							<li className="max-lg:mr-6">
+								<a onClick={() => handleGoToAnchor(sustentabilityReference)}>
+									Sustentabilidade
+								</a>
+							</li>
+							<li className="max-lg:mr-6">
+								<a onClick={() => handleGoToAnchor(ourGroundReference)}>
+									Terrenos
+								</a>
+							</li>
 						</div>
 						<div className="ml-10">
-							<li className="max-lg:mr-6">Parceiros</li>
-							<li className="max-lg:mr-6">Contato</li>
+							<li className="max-lg:mr-6">
+								<a onClick={() => handleGoToAnchor(partinersReference)}>
+									Parceiros
+								</a>
+							</li>
+							<li className="max-lg:mr-6">
+								<a onClick={() => handleGoToAnchor(contactReference)}>
+									Contato
+								</a>
+							</li>
 							<li className="font-bold">Baixar mídia kit</li>
 						</div>
 					</ul>

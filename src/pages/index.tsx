@@ -140,7 +140,10 @@ const IndexPage: React.FC<PageProps> = () => {
 						</div>
 					</div>
 
-					<div className="bg-second-slide h-[540px] bg-no-repeat bg-cover bg-center">
+					<div
+						className="xs:bg-xs-second-slide sm:bg-sm-second-slide md:bg-md-second-slide lg:bg-lg-second-slide xl:bg-xl-second-slide 
+						h-[540px] bg-no-repeat bg-cover bg-top"
+					>
 						<div className="bg-gradient-green h-[540px] w-screen">
 							<div className="wrapper-full">
 								<h1 className="text-green-100 pt-40 lg:w-[400px]">
@@ -165,7 +168,10 @@ const IndexPage: React.FC<PageProps> = () => {
 						</div>
 					</div>
 
-					<div className="bg-third-slide h-[540px] bg-no-repeat bg-cover bg-center">
+					<div
+						className="xs:bg-xs-third-slide sm:bg-sm-third-slide md:bg-md-third-slide lg:bg-lg-third-slide xl:bg-xl-third-slide 
+						h-[540px] bg-no-repeat bg-cover bg-top"
+					>
 						<div className="bg-gradient-green h-[540px] w-screen">
 							<div className="wrapper-full">
 								<h1 className="text-green-100 pt-40 lg:w-[400px]">
@@ -190,7 +196,10 @@ const IndexPage: React.FC<PageProps> = () => {
 						</div>
 					</div>
 
-					<div className="bg-fourth-slide h-[540px] bg-no-repeat bg-cover bg-center">
+					<div
+						className="xs:bg-xs-fourth-slide sm:bg-sm-fourth-slide md:bg-md-fourth-slide lg:bg-lg-fourth-slide xl:bg-xl-fourth-slide 
+						h-[540px] bg-no-repeat bg-cover bg-top"
+					>
 						<div className="bg-gradient-green h-[540px] w-screen">
 							<div className="wrapper-full">
 								<h1 className="text-green-100 pt-40 lg:w-[400px]">
@@ -216,7 +225,10 @@ const IndexPage: React.FC<PageProps> = () => {
 						</div>
 					</div>
 
-					<div className="bg-fifth-slide h-[540px] bg-no-repeat bg-cover bg-center">
+					<div
+						className="xs:bg-xs-fifth-slide sm:bg-sm-fifth-slide md:bg-md-fifth-slide lg:bg-lg-fifth-slide xl:bg-xl-fifth-slide 
+						h-[540px] bg-no-repeat bg-cover bg-top"
+					>
 						<div className="bg-gradient-green h-[540px] w-screen">
 							<div className="wrapper-full">
 								<h1 className="text-green-100 pt-40 lg:w-[400px]">
@@ -737,15 +749,12 @@ const IndexPage: React.FC<PageProps> = () => {
 						</div>
 						<div
 							className="lg:w-[450px] lg:h-[340px] shrink-0 ml-20 relative flex justify-center
-							items-center  max-lg:mt-5 max-lg:w-full max-lg:ml-0"
+							items-center  max-lg:mt-5 max-lg:w-full max-lg:ml-0 flex-col"
 						>
-							<img src={netzeroGif} alt="" />
-							{/* <StaticImage
-								className="rounded-3xl !w-full "
-								alt="Vídeo ilustrativo renderizado do Polo Brasil Zero"
-								src="../images/netzero.gif"
-								layout="fullWidth"
-							/> */}
+							<img src={netzeroGif} alt="" className="rounded-3xl" />
+							<span className="font-bold text-green-800 mt-8">
+								Fonte: NASA Scientific Visualization Studio
+							</span>
 						</div>
 					</div>
 					<h2
@@ -963,7 +972,15 @@ const IndexPage: React.FC<PageProps> = () => {
 				/>
 			</a>
 			<NewsLetter />
-			<Footer />
+			<Footer
+				ourGroundReference={ourGroundRef}
+				aboutUsReference={aboutUsRef}
+				sustentabilityReference={sustentabilityRef}
+				netzeroReference={netzeroRef}
+				partinersReference={partinersRef}
+				esgReference={esgRef}
+				contactReference={contactRef}
+			/>
 		</>
 	);
 };
