@@ -12,7 +12,8 @@ module.exports = {
 				md: "820px",
 				lg: "980px",
 				xl: "1200px",
-				// "2xl": "1440px",
+				"2xl": "1440px",
+				"3xl": "1585px",
 			},
 			colors: {
 				white: "#FFFFFF",

@@ -89,31 +89,31 @@ h4 {
 }
 
 .wrapper-full {
-	@apply w-full mx-auto max-lg:px-8 lg:px-12 xl:px-16 2xl:px-36;
+	@apply w-full mx-auto max-lg:px-8 lg:px-12 xl:px-16 3xl:px-36;
 }
 
 .bg-gradient-green {
 	background: linear-gradient(
 		90deg,
-		rgba(11, 33, 4, 0.8) 50%,
-		rgba(0, 0, 0, 0) 100%
+		rgba(11, 33, 4, 0.5) 50%,
+		rgba(11, 33, 4, 0.2) 100%
 	);
 }
 
 .nav-menu {
-	@apply flex items-center justify-between max-lg:hidden;
+	@apply flex items-center justify-between max-2xl:hidden;
 }
 
 .nav-menu.nav-menu-open {
-	@apply bg-green-500 flex flex-col w-[320px] h-screen absolute top-0 right-0 justify-start p-14;
+	@apply bg-green-500 flex flex-col w-full max-w-[420px] h-screen absolute top-0 right-0 justify-start p-14;
 }
 
 .nav-menu li a {
-	@apply text-green-100 font-bold text-lg flex content-center flex-wrap cursor-pointer;
+	@apply text-green-100 text-lg flex content-center flex-wrap cursor-pointer;
 }
 
 .nav-menu li:not(:first-child) {
-	@apply lg:ml-8;
+	@apply 2xl:ml-8;
 }
 
 .nav-menu.nav-menu-open li:not(:nth-child(2)) {

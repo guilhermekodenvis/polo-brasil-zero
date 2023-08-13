@@ -24,11 +24,29 @@ const IndexPage: React.FC<PageProps> = () => {
 	const partinersRef = React.useRef<HTMLDivElement>(null);
 	const esgRef = React.useRef<HTMLDivElement>(null);
 	const contactRef = React.useRef<HTMLDivElement>(null);
-	const videoRef = React.useRef<HTMLVideoElement>(null);
+	const sliderRef = React.useRef(null);
 
 	React.useEffect(() => {
-		const myVideo = document.getElementById("myVideo");
-		myVideo?.play();
+		const myVideo1 = document.getElementById("myVideo1");
+		myVideo1?.play();
+
+		const myVideo2 = document.getElementById("myVideo2");
+		myVideo2?.play();
+
+		const myVideo3 = document.getElementById("myVideo3");
+		myVideo3?.play();
+
+		const myVideo4 = document.getElementById("myVideo4");
+		myVideo4?.play();
+
+		const myVideo5 = document.getElementById("myVideo5");
+		myVideo5?.play();
+
+		const lastSlideDot = document.querySelector(".slick-dots>li:last-child");
+		lastSlideDot?.remove();
+
+		const lastSlide = document.getElementById("lastSlide");
+		lastSlide?.remove();
 	}, []);
 
 	const handleCloseVideoClick = () => {
@@ -72,6 +90,11 @@ const IndexPage: React.FC<PageProps> = () => {
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		autoplay: true,
+		autoplaySpeed: 5000,
+	};
+
+	const handleGoToFirstSlide = () => {
+		sliderRef.current.slickGoTo(0);
 	};
 
 	return (
@@ -104,18 +127,25 @@ const IndexPage: React.FC<PageProps> = () => {
 				</div>
 			)}
 			<header>
-				<Slider {...settings}>
+				<Slider
+					ref={sliderRef}
+					{...settings}
+					beforeChange={(currentSlide, nextSlide) => {
+						if (nextSlide === 5) {
+							handleGoToFirstSlide();
+						}
+					}}
+				>
 					<div className="h-[540px] bg-no-repeat bg-cover bg-center relative">
 						<video
-							ref={videoRef}
 							muted
 							loop
-							id="myVideo"
+							id="myVideo1"
 							className="absolute w-screen top-0 left-0 h-full -z-10 object-cover"
 						>
 							<source src="/img/first-slidee.mp4" type="video/mp4" />
 						</video>
-						<div className="bg-gradient-green h-[540px] w-screen">
+						<div className="bg-gradient-green h-[540px] w-[calc(100vw-15px)]">
 							<div className="wrapper-full">
 								<h1 className="text-green-100 pt-40 lg:w-[400px]">
 									Centro Sustentável POLO BRASIL ZERO
@@ -140,11 +170,16 @@ const IndexPage: React.FC<PageProps> = () => {
 						</div>
 					</div>
 
-					<div
-						className="xs:bg-xs-second-slide sm:bg-sm-second-slide md:bg-md-second-slide lg:bg-lg-second-slide xl:bg-xl-second-slide 
-						h-[540px] bg-no-repeat bg-cover bg-top"
-					>
-						<div className="bg-gradient-green h-[540px] w-screen">
+					<div className="h-[540px] bg-no-repeat bg-cover bg-center relative">
+						{/* <video
+							muted
+							loop
+							id="myVideo2"
+							className="absolute w-screen top-0 left-0 h-full -z-10 object-cover"
+						>
+							<source src="/img/NetZero.mov" type="video/mp4" />
+						</video> */}
+						<div className="bg-gradient-green h-[540px] w-[calc(100vw-15px)]">
 							<div className="wrapper-full">
 								<h1 className="text-green-100 pt-40 lg:w-[400px]">
 									Primeiro Parque industrial ZERO EMISSÕES do Brasil
@@ -168,11 +203,16 @@ const IndexPage: React.FC<PageProps> = () => {
 						</div>
 					</div>
 
-					<div
-						className="xs:bg-xs-third-slide sm:bg-sm-third-slide md:bg-md-third-slide lg:bg-lg-third-slide xl:bg-xl-third-slide 
-						h-[540px] bg-no-repeat bg-cover bg-top"
-					>
-						<div className="bg-gradient-green h-[540px] w-screen">
+					<div className="h-[540px] bg-no-repeat bg-cover bg-center relative">
+						<video
+							muted
+							loop
+							id="myVideo3"
+							className="absolute w-screen top-0 left-0 h-full -z-10 object-cover"
+						>
+							<source src="/img/third-slide.mp4" type="video/mp4" />
+						</video>
+						<div className="bg-gradient-green h-[540px] w-[calc(100vw-15px)]">
 							<div className="wrapper-full">
 								<h1 className="text-green-100 pt-40 lg:w-[400px]">
 									Aqui construímos um futuro sem emissões diretas
@@ -196,19 +236,25 @@ const IndexPage: React.FC<PageProps> = () => {
 						</div>
 					</div>
 
-					<div
-						className="xs:bg-xs-fourth-slide sm:bg-sm-fourth-slide md:bg-md-fourth-slide lg:bg-lg-fourth-slide xl:bg-xl-fourth-slide 
-						h-[540px] bg-no-repeat bg-cover bg-top"
-					>
-						<div className="bg-gradient-green h-[540px] w-screen">
+					<div className="h-[540px] bg-no-repeat bg-cover bg-center relative">
+						<video
+							muted
+							loop
+							id="myVideo4"
+							className="absolute w-screen top-0 left-0 h-full -z-10 object-cover"
+						>
+							<source src="/img/fourth-slide.mp4" type="video/mp4" />
+						</video>
+
+						<div className="bg-gradient-green h-[540px] w-[calc(100vw-15px)]">
 							<div className="wrapper-full">
 								<h1 className="text-green-100 pt-40 lg:w-[400px]">
-									No coração do nosso complexo
+									EcoHub de Tecnologia
 								</h1>
 								<p className="text-green-100 mt-2 lg:w-[580px]">
-									Bombeando todo DESENVOLVIMENTO SUSTENTÁVEL, um EcoHub de
-									Tecnologia voltado para a Agricultura regenerativa BC,
-									Indústria 5.0 e Sociabilidade.
+									Voltado para Agricultura regenerativa e de baixo carbono,
+									Indústria 5.0 e Sociabilidade. Gerando o DESENVOLVIMENTO
+									SUSTENTÁVEL do estado e das pessoas.
 								</p>
 								<button
 									type="button"
@@ -225,11 +271,17 @@ const IndexPage: React.FC<PageProps> = () => {
 						</div>
 					</div>
 
-					<div
-						className="xs:bg-xs-fifth-slide sm:bg-sm-fifth-slide md:bg-md-fifth-slide lg:bg-lg-fifth-slide xl:bg-xl-fifth-slide 
-						h-[540px] bg-no-repeat bg-cover bg-top"
-					>
-						<div className="bg-gradient-green h-[540px] w-screen">
+					<div className="h-[540px] bg-no-repeat bg-cover bg-center relative">
+						<video
+							muted
+							loop
+							id="myVideo5"
+							className="absolute w-screen top-0 left-0 h-full -z-10 object-cover"
+						>
+							<source src="/img/fifth-slide.mp4" type="video/mp4" />
+						</video>
+
+						<div className="bg-gradient-green h-[540px] w-[calc(100vw-15px)]">
 							<div className="wrapper-full">
 								<h1 className="text-green-100 pt-40 lg:w-[400px]">
 									Nossa missão
@@ -253,32 +305,40 @@ const IndexPage: React.FC<PageProps> = () => {
 							</div>
 						</div>
 					</div>
+					<div
+						id="lastSlide"
+						style={{
+							display: "none",
+						}}
+					></div>
 				</Slider>
 			</header>
 			<section className="py-16 shrink-0 grow" ref={ourGroundRef}>
 				<div className="flex wrapper-full max-lg:justify-center max-lg:flex-col max-lg:items-center">
 					<div className="flex flex-col justify-center max-lg:items-center">
-						<h2 className="lg:w-80 xl:w-auto text-green-800 max-lg:text-center">
-							NOSSO TERRENO:
-						</h2>
-						<h3 className="mt-7 max-lg:text-center text-green-800">
+						<h2 className="lg:w-80 xl:w-auto text-green-800 max-lg:text-center text">
 							Nossos Lotes sustentáveis
-						</h3>
+						</h2>
 						<p className="mt-2 max-lg:text-center xl:pr-28 2xl:pr-60 text-green-800">
 							Todos os lotes já estão equipados com tubulações centrais de
 							abastecimento e tratamento de água, rede de coleta dos efluentes
 							industriais e sanitários interligados direto na ETAE.
 						</p>
 					</div>
+					{/* <div className="flex flex-col items-center ">
+					 */}
 					<div
-						className="lg:w-[450px] lg:h-[340px] shrink-0 ml-20 relative flex justify-center
-						items-center cursor-pointer max-lg:mt-5 max-lg:w-full max-lg:ml-0"
+						className="lg:w-[450px] lg:h-[340px] shrink-0 relative flex justify-center
+						items-center cursor-pointer max-lg:mt-5 max-lg:w-full max-lg:ml-0 flex-col ml-20"
 						onClick={(_) =>
 							handleOpenVideo("https://www.youtube.com/embed/FuCpCoSmRBg")
 						}
 					>
+						<p className="text-green-800 font-bold">
+							Planta dos Lotes de Venda
+						</p>
 						<StaticImage
-							className="rounded-3xl !w-full border border-green-500"
+							className="rounded-3xl !w-full border border-green-500 mt-2"
 							alt="Vídeo ilustrativo renderizado do Polo Brasil Zero"
 							src="../images/pbz-render-video-banner.webp"
 							layout="fullWidth"
@@ -289,15 +349,16 @@ const IndexPage: React.FC<PageProps> = () => {
 							className="!absolute"
 						/>
 					</div>
+					{/* </div> */}
 				</div>
 				<div className="wrapper-full">
 					<StaticImage
-						className="mx-auto block w-fit mt-32 max-lg:!hidden"
+						className="mx-auto block w-fit mt-16 max-lg:!hidden"
 						alt="Planta do parque industrial"
 						src="../images/ground.svg"
 					/>
 					<StaticImage
-						className="mx-auto block w-full mt-32 lg:!hidden"
+						className="mx-auto block w-full mt-16 lg:!hidden"
 						alt="Planta do parque industrial"
 						src="../images/map-responsive.png"
 						layout="fullWidth"
@@ -465,7 +526,7 @@ const IndexPage: React.FC<PageProps> = () => {
 				<div className="flex wrapper-full items-center max-lg:flex-col">
 					<div className="flex flex-col max-lg:text-center max-lg:items-center">
 						<h2 className="lg:w-80 xl:w-auto text-green-800 max-lg:text-center">
-							SOBRE NÓS:
+							SOBRE NÓS
 						</h2>
 						<h3 className="mt-7 max-lg:text-center text-green-800">
 							Centro Sustentável Industrial, Tecnológico e Social
@@ -492,20 +553,23 @@ const IndexPage: React.FC<PageProps> = () => {
 						</button>
 					</div>
 					<div
-						className="w-full h-auto lg:w-[450px] lg:h-[340px] shrink-0 lg:ml-20 relative flex justify-center items-center cursor-pointer max-lg:mt-7"
+						className="w-full h-auto lg:w-[450px] lg:h-[340px] shrink-0 lg:ml-20 relative flex justify-center items-center cursor-pointer max-lg:mt-7 flex-col"
 						onClick={(_) =>
 							handleOpenVideo("https://www.youtube.com/embed/b6SDcbE3y98")
 						}
 					>
+						<p className="text-green-800 font-bold">
+							Apresentação do Projeto Total
+						</p>
 						<StaticImage
-							className="rounded-3xl w-full border border-green-500"
+							className="rounded-3xl w-full border border-green-500 mt-2"
 							alt="Vídeo ilustrativo renderizado do Polo Brasil Zero"
-							src="../images/pbz-render-video-banner-2.webp"
+							src="../images/pbz-render-video-banner-2.jpg"
 							layout="fullWidth"
 						/>
 						<StaticImage
 							alt="Ícone de play"
-							src="../images/play-green.svg"
+							src="../images/play.svg"
 							className="!absolute"
 						/>
 					</div>
@@ -515,7 +579,7 @@ const IndexPage: React.FC<PageProps> = () => {
 					<StaticImage
 						alt="Imagem que mostra o plano ESG. (ambiental, social, governança, econômico, tecnológico)"
 						src="../images/esg.png"
-						className="shrink-0 max-lg:mt-12"
+						className="shrink-0 max-lg:mt-12 w-[300px]"
 					/>
 					<div className="lg:ml-10 max-lg:text-center">
 						<h3 className="text-green-800 max-lg:mt-10">Visão de Liderança</h3>
@@ -532,13 +596,16 @@ const IndexPage: React.FC<PageProps> = () => {
 					</div>
 					<div
 						className="lg:w-[450px] lg:h-[340px] shrink-0 ml-20 relative flex justify-center
-						items-center cursor-pointer max-lg:mt-5 max-lg:w-full max-lg:ml-0 lg:ml-10"
+						items-center cursor-pointer max-lg:mt-5 max-lg:w-full max-lg:ml-0 lg:ml-10 flex-col"
 						onClick={(_) =>
 							handleOpenVideo("https://www.youtube.com/embed/fL2jcCSN2pc")
 						}
 					>
+						<p className="text-green-800 font-bold">
+							Chamado para Sustentabilidade
+						</p>
 						<StaticImage
-							className="rounded-3xl !w-full border border-green-500"
+							className="rounded-3xl !w-full border border-green-500 mt-2"
 							alt="Vídeo ilustrativo renderizado do Polo Brasil Zero"
 							src="../images/pbz-render-video-banner-3.jpg"
 							layout="fullWidth"
@@ -555,7 +622,7 @@ const IndexPage: React.FC<PageProps> = () => {
 					className="wrapper-full flex max-lg:flex-col justify-center lg:justify-between lg:mt-10"
 					ref={sustentabilityRef}
 				>
-					<div className="max-lg:text-center  mt-20 ">
+					<div className="max-lg:text-center ">
 						<h2 className="text-green-800">Sustentabilidade</h2>
 						<p className="mt-7 text-green-800">
 							Descubra como a adoção de boas práticas e o foco na
@@ -645,7 +712,7 @@ const IndexPage: React.FC<PageProps> = () => {
 						</a>
 						<div className="flex flex-col absolute w-10/12 bottom-4 z-[60]">
 							<h3 className="text-white w-10/12 text-2xl font-bold mb-2">
-								Neutralização GEEs
+								Neutralização GEE
 							</h3>
 							<p className="text-white w-10/12">
 								Mitigar emissões diretas e neutralizar pegada de carbono
@@ -711,7 +778,7 @@ const IndexPage: React.FC<PageProps> = () => {
 					<div className="flex items-center max-lg:flex-col">
 						<div className="flex flex-col max-lg:text-center">
 							<h2 className="lg:w-80 xl:w-auto text-green-800 max-lg:text-center">
-								NETZERO:
+								NETZERO
 							</h2>
 							<h3 className="mt-7 max-lg:text-center text-green-800">
 								Ambição Net-Zero 2024
@@ -751,8 +818,11 @@ const IndexPage: React.FC<PageProps> = () => {
 							className="lg:w-[450px] lg:h-[340px] shrink-0 ml-20 relative flex justify-center
 							items-center  max-lg:mt-5 max-lg:w-full max-lg:ml-0 flex-col"
 						>
-							<img src={netzeroGif} alt="" className="rounded-3xl" />
-							<span className="font-bold text-green-800 mt-8">
+							<span className="text-green-800 mt-4 font-bold">
+								Projeção de emissões de GEE na atmosfera
+							</span>
+							<img src={netzeroGif} alt="" className="rounded-3xl mt-4" />
+							<span className="text-green-800 mt-2">
 								Fonte: NASA Scientific Visualization Studio
 							</span>
 						</div>
@@ -761,7 +831,7 @@ const IndexPage: React.FC<PageProps> = () => {
 						className="mt-10 pt-10 text-green-800 lg:w-full max-lg:text-center"
 						ref={partinersRef}
 					>
-						Parceiros estratégicos:
+						Parceiros estratégicos
 					</h2>
 					<div className="flex mt-16 justify-between w-full max-lg:flex-col items-center">
 						<a href="https://www.pactoglobal.org.br/" target="_blank">
@@ -822,7 +892,7 @@ const IndexPage: React.FC<PageProps> = () => {
 			</section>
 			<section className="bg-green-100 py-16" ref={esgRef}>
 				<div>
-					<h2 className="wrapper-full text-green-800">Agenda ESG:</h2>
+					<h2 className="wrapper-full text-green-800">Agenda ESG</h2>
 					<div className="h-[240px] w-full flex justify-center items-center">
 						<h3 className="text-green-800">Nenhum post no momento...</h3>
 					</div>
@@ -891,7 +961,7 @@ const IndexPage: React.FC<PageProps> = () => {
 					<div className="flex flex-col max-lg:flex">
 						<h2 className="text-white max-lg:text-center">
 							E você? Quer fazer parte do nosso projeto sustentável? Entre em
-							contato:
+							contato
 						</h2>
 						<div className="mt-16 p-3 border-white rounded-md border lg:w-[330px]">
 							<StaticImage
@@ -908,8 +978,8 @@ const IndexPage: React.FC<PageProps> = () => {
 								className="mr-4 shrink-0 h-[21px]"
 							/>
 							<span className="text-white block">
-								Av. das Nações Unidas, 14.171 Vila Gertrudes, São Paulo - SP.
-								04794-000
+								Av. Ayrton Senna da Silva - KM 497 Jardim Industriario, CEP
+								78099-499 / Cuiabá - MT
 							</span>
 						</div>
 					</div>

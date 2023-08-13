@@ -73,7 +73,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 					<StaticImage
 						alt="Menu hamburger"
 						src="../images/menu-hamburger.svg"
-						className="lg:!hidden cursor-pointer"
+						className="2xl:!hidden cursor-pointer"
 					/>
 				</a>
 				{isMenuOpen && (
@@ -88,7 +88,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 							<StaticImage
 								alt="Fechar menu hamburger"
 								src="../images/close.svg"
-								className="lg:!hidden cursor-pointer"
+								className="2xl:!hidden cursor-pointer"
 							/>
 						</a>
 					</li>
@@ -96,9 +96,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 						<a onClick={(_) => handleGoToTop()}>Homepage</a>
 					</li>
 					<li>
-						<a onClick={(_) => handleGoToAnchor(ourGroundReference)}>
-							Nosso terreno
-						</a>
+						<a onClick={(_) => handleGoToAnchor(ourGroundReference)}>Lotes</a>
 					</li>
 					<li>
 						<a onClick={(_) => handleGoToAnchor(aboutUsReference)}>Sobre nós</a>
